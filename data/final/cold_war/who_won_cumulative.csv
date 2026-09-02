@@ -1,0 +1,21 @@
+Year,City,NOC,Country,EditionTotalMedals,EditionGoldMedals,CumulativeTotalMedals,CumulativeGoldMedals,ParticipationStatus,BoycottBy
+1952,Helsinki,URS,Soviet Union,70.0,22.0,70,22,participated,
+1952,Helsinki,USA,United States,76.0,40.0,76,40,participated,
+1956,Melbourne / Stockholm,URS,Soviet Union,98.0,37.0,168,59,participated,
+1956,Melbourne / Stockholm,USA,United States,74.0,32.0,150,72,participated,
+1960,Roma,URS,Soviet Union,103.0,43.0,271,102,participated,
+1960,Roma,USA,United States,71.0,34.0,221,106,participated,
+1964,Tokyo,URS,Soviet Union,93.0,30.0,364,132,participated,
+1964,Tokyo,USA,United States,90.0,36.0,311,142,participated,
+1968,Mexico City,URS,Soviet Union,91.0,29.0,455,161,participated,
+1968,Mexico City,USA,United States,107.0,45.0,418,187,participated,
+1972,Munich,URS,Soviet Union,99.0,50.0,554,211,participated,
+1972,Munich,USA,United States,94.0,33.0,512,220,participated,
+1976,Montreal,URS,Soviet Union,125.0,49.0,679,260,participated,
+1976,Montreal,USA,United States,94.0,34.0,606,254,participated,
+1980,Moskva,URS,Soviet Union,195.0,80.0,874,340,participated,
+1980,Moskva,USA,United States,,,606,254,boycott,USA
+1984,Los Angeles,URS,Soviet Union,,,874,340,boycott,URS
+1984,Los Angeles,USA,United States,173.0,82.0,779,336,participated,
+1988,Seoul,URS,Soviet Union,131.0,54.0,1005,394,participated,
+1988,Seoul,USA,United States,94.0,36.0,873,372,participated,
