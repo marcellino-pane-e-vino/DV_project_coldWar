@@ -1,0 +1,43 @@
+{
+  "input_rows": 314907,
+  "columns": [
+    "edition",
+    "edition_id",
+    "country_noc",
+    "sport",
+    "event",
+    "result_id",
+    "athlete",
+    "athlete_id",
+    "pos",
+    "medal",
+    "isTeamSport"
+  ],
+  "summer_1952_1988_rows": 90827,
+  "usa_urs_rows": 9968,
+  "co_present_result_ids_all_sports": 1299,
+  "candidate_result_ids_supported_sports": 314,
+  "candidate_result_ids_by_sport": {
+    "Wrestling": 131,
+    "Boxing": 83,
+    "Fencing": 32,
+    "Judo": 21,
+    "Tennis": 13,
+    "Basketball": 10,
+    "Water Polo": 7,
+    "Volleyball": 6,
+    "Football": 4,
+    "Handball": 4,
+    "Table Tennis": 3
+  },
+  "years_with_both_delegations": [
+    1952,
+    1956,
+    1960,
+    1964,
+    1968,
+    1972,
+    1976,
+    1988
+  ]
+}

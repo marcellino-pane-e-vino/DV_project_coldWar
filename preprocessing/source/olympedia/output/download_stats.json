@@ -1,0 +1,11 @@
+{
+  "live_requests": 314,
+  "cache_hits": 0,
+  "retries": 0,
+  "http_429": 0,
+  "http_5xx": 0,
+  "timeouts_or_network_errors": 0,
+  "permanent_errors": 0,
+  "downloaded_pages": 314,
+  "failed_result_ids": []
+}

@@ -1,0 +1,315 @@
+olympedia_result_id,sport,event,match_tables_detected,source_exact_usa_urs_rows,usa_urs_pairings_detected,unparsed_exact_pair_rows,unparsed_match_ids,parse_status,source_local_file
+15000,Judo,"Lightweight, Men",11,0,0,0,,ok,15000.html
+15091,Judo,"Heavyweight, Men",8,1,1,0,,ok,15091.html
+15139,Judo,"Lightweight, Men",12,0,0,0,,ok,15139.html
+15190,Judo,"Half-Middleweight, Men",12,0,0,0,,ok,15190.html
+15240,Judo,"Middleweight, Men",14,1,1,0,,ok,15240.html
+15299,Judo,"Half-Heavyweight, Men",12,1,1,0,,ok,15299.html
+15351,Judo,"Heavyweight, Men",12,0,0,0,,ok,15351.html
+15391,Judo,"Open Class, Men",12,0,0,0,,ok,15391.html
+15442,Judo,"Lightweight, Men",11,0,0,0,,ok,15442.html
+15492,Judo,"Half-Middleweight, Men",11,0,0,0,,ok,15492.html
+15540,Judo,"Middleweight, Men",11,0,0,0,,ok,15540.html
+15591,Judo,"Half-Heavyweight, Men",13,0,0,0,,ok,15591.html
+15646,Judo,"Heavyweight, Men",11,0,0,0,,ok,15646.html
+15684,Judo,"Open Class, Men",11,0,0,0,,ok,15684.html
+16446,Judo,"Extra-Lightweight, Men",13,0,0,0,,ok,16446.html
+16505,Judo,"Half-Lightweight, Men",13,0,0,0,,ok,16505.html
+16571,Judo,"Lightweight, Men",13,0,0,0,,ok,16571.html
+16634,Judo,"Half-Middleweight, Men",13,1,1,0,,ok,16634.html
+16697,Judo,"Middleweight, Men",13,0,0,0,,ok,16697.html
+16754,Judo,"Half-Heavyweight, Men",11,0,0,0,,ok,16754.html
+16794,Judo,"Heavyweight, Men",11,0,0,0,,ok,16794.html
+22468,Boxing,"Flyweight, Men",6,0,0,0,,ok,22468.html
+22501,Boxing,"Bantamweight, Men",5,0,0,0,,ok,22501.html
+22529,Boxing,"Featherweight, Men",5,0,0,0,,ok,22529.html
+22564,Boxing,"Lightweight, Men",5,0,0,0,,ok,22564.html
+22596,Boxing,"Light-Welterweight, Men",5,1,1,0,,ok,22596.html
+22629,Boxing,"Welterweight, Men",5,0,0,0,,ok,22629.html
+22663,Boxing,"Light-Middleweight, Men",5,0,0,0,,ok,22663.html
+22691,Boxing,"Middleweight, Men",5,0,0,0,,ok,22691.html
+22719,Boxing,"Light-Heavyweight, Men",5,0,0,0,,ok,22719.html
+22742,Boxing,"Heavyweight, Men",6,0,0,0,,ok,22742.html
+22769,Boxing,"Flyweight, Men",5,0,0,0,,ok,22769.html
+22839,Boxing,"Lightweight, Men",5,0,0,0,,ok,22839.html
+22862,Boxing,"Light-Welterweight, Men",5,0,0,0,,ok,22862.html
+22889,Boxing,"Welterweight, Men",4,0,0,0,,ok,22889.html
+22909,Boxing,"Light-Middleweight, Men",4,0,0,0,,ok,22909.html
+22927,Boxing,"Middleweight, Men",4,0,0,0,,ok,22927.html
+22945,Boxing,"Light-Heavyweight, Men",4,1,1,0,,ok,22945.html
+22960,Boxing,"Heavyweight, Men",4,1,1,0,,ok,22960.html
+22975,Boxing,"Flyweight, Men",6,0,0,0,,ok,22975.html
+23014,Boxing,"Bantamweight, Men",6,0,0,0,,ok,23014.html
+23053,Boxing,"Featherweight, Men",5,1,1,0,,ok,23053.html
+23089,Boxing,"Lightweight, Men",6,0,0,0,,ok,23089.html
+23129,Boxing,"Light-Welterweight, Men",6,0,0,0,,ok,23129.html
+23169,Boxing,"Welterweight, Men",6,0,0,0,,ok,23169.html
+23208,Boxing,"Light-Middleweight, Men",5,1,1,0,,ok,23208.html
+23236,Boxing,"Middleweight, Men",5,0,0,0,,ok,23236.html
+23266,Boxing,"Light-Heavyweight, Men",5,1,1,0,,ok,23266.html
+23290,Boxing,"Heavyweight, Men",5,0,0,0,,ok,23290.html
+23312,Boxing,"Flyweight, Men",5,0,0,0,,ok,23312.html
+23345,Boxing,"Bantamweight, Men",5,0,0,0,,ok,23345.html
+23382,Boxing,"Featherweight, Men",5,0,0,0,,ok,23382.html
+23419,Boxing,"Lightweight, Men",6,0,0,0,,ok,23419.html
+23459,Boxing,"Light-Welterweight, Men",6,1,1,0,,ok,23459.html
+23500,Boxing,"Welterweight, Men",5,0,0,0,,ok,23500.html
+23535,Boxing,"Light-Middleweight, Men",5,0,0,0,,ok,23535.html
+23565,Boxing,"Middleweight, Men",5,0,0,0,,ok,23565.html
+23590,Boxing,"Light-Heavyweight, Men",5,1,1,0,,ok,23590.html
+23614,Boxing,"Heavyweight, Men",4,1,1,0,,ok,23614.html
+23632,Boxing,"Light-Flyweight, Men",5,0,0,0,,ok,23632.html
+23661,Boxing,"Flyweight, Men",5,0,0,0,,ok,23661.html
+23692,Boxing,"Bantamweight, Men",6,0,0,0,,ok,23692.html
+23737,Boxing,"Featherweight, Men",5,0,0,0,,ok,23737.html
+23774,Boxing,"Lightweight, Men",6,0,0,0,,ok,23774.html
+23817,Boxing,"Light-Welterweight, Men",6,0,0,0,,ok,23817.html
+23859,Boxing,"Welterweight, Men",6,0,0,0,,ok,23859.html
+23898,Boxing,"Light-Middleweight, Men",5,0,0,0,,ok,23898.html
+23930,Boxing,"Middleweight, Men",5,0,0,0,,ok,23930.html
+23958,Boxing,"Light-Heavyweight, Men",5,0,0,0,,ok,23958.html
+23981,Boxing,"Heavyweight, Men",4,1,1,0,,ok,23981.html
+24001,Boxing,"Light-Flyweight, Men",5,0,0,0,,ok,24001.html
+24037,Boxing,"Flyweight, Men",6,0,0,0,,ok,24037.html
+24081,Boxing,"Bantamweight, Men",6,1,1,0,,ok,24081.html
+24125,Boxing,"Featherweight, Men",6,0,0,0,,ok,24125.html
+24176,Boxing,"Lightweight, Men",6,0,0,0,,ok,24176.html
+24219,Boxing,"Light-Welterweight, Men",5,0,0,0,,ok,24219.html
+24256,Boxing,"Welterweight, Men",6,1,1,0,,ok,24256.html
+24299,Boxing,"Light-Middleweight, Men",6,1,1,0,,ok,24299.html
+24340,Boxing,"Middleweight, Men",5,1,1,0,,ok,24340.html
+24367,Boxing,"Light-Heavyweight, Men",5,0,0,0,,ok,24367.html
+24400,Boxing,"Heavyweight, Men",4,1,1,0,,ok,24400.html
+24418,Boxing,"Light-Flyweight, Men",5,0,0,0,,ok,24418.html
+24454,Boxing,"Flyweight, Men",6,0,0,0,,ok,24454.html
+24495,Boxing,"Bantamweight, Men",6,1,1,0,,ok,24495.html
+24540,Boxing,"Featherweight, Men",6,1,1,0,,ok,24540.html
+24581,Boxing,"Lightweight, Men",6,0,0,0,,ok,24581.html
+24621,Boxing,"Light-Welterweight, Men",6,1,1,0,,ok,24621.html
+24669,Boxing,"Welterweight, Men",6,0,0,0,,ok,24669.html
+24713,Boxing,"Light-Middleweight, Men",5,0,0,0,,ok,24713.html
+24746,Boxing,"Middleweight, Men",5,1,1,0,,ok,24746.html
+24775,Boxing,"Light-Heavyweight, Men",5,1,1,0,,ok,24775.html
+24804,Boxing,"Heavyweight, Men",5,0,0,0,,ok,24804.html
+25579,Boxing,"Light-Flyweight, Men",6,0,0,0,,ok,25579.html
+25620,Boxing,"Flyweight, Men",6,0,0,0,,ok,25620.html
+25670,Boxing,"Bantamweight, Men",6,0,0,0,,ok,25670.html
+25725,Boxing,"Featherweight, Men",6,0,0,0,,ok,25725.html
+25779,Boxing,"Lightweight, Men",6,0,0,0,,ok,25779.html
+25824,Boxing,"Light-Welterweight, Men",6,0,0,0,,ok,25824.html
+25879,Boxing,"Welterweight, Men",6,0,0,0,,ok,25879.html
+25929,Boxing,"Light-Middleweight, Men",6,1,1,0,,ok,25929.html
+25972,Boxing,"Middleweight, Men",6,0,0,0,,ok,25972.html
+26012,Boxing,"Light-Heavyweight, Men",5,1,1,0,,ok,26012.html
+26044,Boxing,"Heavyweight, Men",5,0,0,0,,ok,26044.html
+26067,Boxing,"Super-Heavyweight, Men",5,1,1,0,,ok,26067.html
+31969,Basketball,"Basketball, Men",12,2,2,0,,ok,31969.html
+32044,Basketball,"Basketball, Men",13,2,2,0,,ok,32044.html
+32115,Basketball,"Basketball, Men",12,1,1,0,,ok,32115.html
+32187,Basketball,"Basketball, Men",7,1,1,0,,ok,32187.html
+32268,Basketball,"Basketball, Men",7,0,0,0,,ok,32268.html
+32349,Basketball,"Basketball, Men",7,1,1,0,,ok,32349.html
+32430,Basketball,"Basketball, Men",6,0,0,0,,ok,32430.html
+32480,Basketball,"Basketball, Women",1,1,1,0,,ok,32480.html
+32646,Basketball,"Basketball, Men",7,1,1,0,,ok,32646.html
+32701,Basketball,"Basketball, Women",5,1,1,0,,ok,32701.html
+33688,Football,"Football, Men",5,0,0,0,,ok,33688.html
+33721,Football,"Football, Men",4,0,0,0,,ok,33721.html
+33855,Football,"Football, Men",7,0,0,0,,ok,33855.html
+34016,Football,"Football, Men",7,1,1,0,,ok,34016.html
+34518,Handball,"Handball, Men",9,0,0,0,,ok,34518.html
+34572,Handball,"Handball, Men",3,0,0,0,,ok,34572.html
+34742,Handball,"Handball, Men",3,1,1,0,,ok,34742.html
+34783,Handball,"Handball, Women",4,0,0,0,,ok,34783.html
+37000,Volleyball,"Volleyball, Men",1,1,1,0,,ok,37000.html
+37048,Volleyball,"Volleyball, Women",1,1,1,0,,ok,37048.html
+37066,Volleyball,"Volleyball, Men",1,1,1,0,,ok,37066.html
+37114,Volleyball,"Volleyball, Women",1,1,1,0,,ok,37114.html
+37404,Volleyball,"Volleyball, Men",6,1,1,0,,ok,37404.html
+37454,Volleyball,"Volleyball, Women",5,0,0,0,,ok,37454.html
+38237,Water Polo,"Water Polo, Men",9,0,0,0,,ok,38237.html
+38305,Water Polo,"Water Polo, Men",5,1,1,0,,ok,38305.html
+38341,Water Polo,"Water Polo, Men",8,0,0,0,,ok,38341.html
+38391,Water Polo,"Water Polo, Men",8,0,0,0,,ok,38391.html
+38432,Water Polo,"Water Polo, Men",7,1,1,0,,ok,38432.html
+38502,Water Polo,"Water Polo, Men",5,1,1,0,,ok,38502.html
+38727,Water Polo,"Water Polo, Men",6,1,1,0,,ok,38727.html
+45037,Tennis,"Singles, Men",6,1,1,0,,ok,45037.html
+45106,Tennis,"Doubles, Men",5,0,0,0,,ok,45106.html
+45142,Tennis,"Singles, Women",6,0,0,0,,ok,45142.html
+45211,Tennis,"Doubles, Women",4,0,0,0,,ok,45211.html
+46500,Table Tennis,"Singles, Men",13,0,0,0,,ok,46500.html
+46903,Table Tennis,"Singles, Women",13,2,2,0,,ok,46903.html
+47065,Table Tennis,"Doubles, Women",6,0,0,0,,ok,47065.html
+86512,Fencing,"Foil, Individual, Men",0,0,0,0,,no_match_table_detected,86512.html
+86533,Fencing,"Épée, Individual, Men",0,0,0,0,,no_match_table_detected,86533.html
+86553,Fencing,"Sabre, Individual, Men",0,0,0,0,,no_match_table_detected,86553.html
+86731,Fencing,"Foil, Individual, Women",0,0,0,0,,no_match_table_detected,86731.html
+86748,Fencing,"Foil, Individual, Men",9,4,4,0,,ok,86748.html
+86762,Fencing,"Épée, Individual, Men",12,3,3,0,,ok,86762.html
+86781,Fencing,"Sabre, Individual, Men",6,1,1,0,,ok,86781.html
+86883,Fencing,"Foil, Individual, Women",7,4,4,0,,ok,86883.html
+86895,Fencing,"Foil, Individual, Men",29,7,7,0,,ok,86895.html
+87377,Fencing,"Épée, Individual, Men",32,0,0,0,,ok,87377.html
+87876,Fencing,"Sabre, Individual, Men",29,3,3,0,,ok,87876.html
+89864,Fencing,"Foil, Individual, Women",19,2,2,0,,ok,89864.html
+90541,Fencing,"Foil, Individual, Men",24,2,2,0,,ok,90541.html
+90845,Fencing,"Épée, Individual, Men",20,1,1,0,,ok,90845.html
+91259,Fencing,"Sabre, Individual, Men",17,2,2,0,,ok,91259.html
+92978,Fencing,"Foil, Individual, Women",17,2,2,0,,ok,92978.html
+93474,Fencing,"Foil, Individual, Men",29,1,1,0,,ok,93474.html
+93838,Fencing,"Épée, Individual, Men",29,2,2,0,,ok,93838.html
+94245,Fencing,"Sabre, Individual, Men",16,5,5,0,,ok,94245.html
+96118,Fencing,"Foil, Individual, Women",16,3,3,0,,ok,96118.html
+96653,Fencing,"Foil, Individual, Men",22,3,3,0,,ok,96653.html
+97028,Fencing,"Épée, Individual, Men",27,1,1,0,,ok,97028.html
+97460,Fencing,"Sabre, Individual, Men",22,6,6,0,,ok,97460.html
+99414,Fencing,"Foil, Individual, Women",15,1,1,0,,ok,99414.html
+100009,Fencing,"Foil, Individual, Men",25,4,4,0,,ok,100009.html
+100375,Fencing,"Épée, Individual, Men",28,1,1,0,,ok,100375.html
+100738,Fencing,"Sabre, Individual, Men",25,6,6,0,,ok,100738.html
+102704,Fencing,"Foil, Individual, Women",25,1,1,0,,ok,102704.html
+108488,Fencing,"Foil, Individual, Men",38,3,3,0,,ok,108488.html
+108952,Fencing,"Épée, Individual, Men",45,1,1,0,,ok,108952.html
+109473,Fencing,"Sabre, Individual, Men",23,5,5,0,,ok,109473.html
+111376,Fencing,"Foil, Individual, Women",26,3,3,0,,ok,111376.html
+123126,Wrestling,"Flyweight, Freestyle, Men",6,1,1,0,,ok,123126.html
+123159,Wrestling,"Bantamweight, Freestyle, Men",7,1,1,0,,ok,123159.html
+123202,Wrestling,"Featherweight, Freestyle, Men",8,1,1,0,,ok,123202.html
+123255,Wrestling,"Lightweight, Freestyle, Men",8,0,0,0,,ok,123255.html
+123310,Wrestling,"Welterweight, Freestyle, Men",7,0,0,0,,ok,123310.html
+123355,Wrestling,"Middleweight, Freestyle, Men",7,1,1,0,,ok,123355.html
+123396,Wrestling,"Light-Heavyweight, Freestyle, Men",6,1,1,0,,ok,123396.html
+123428,Wrestling,"Heavyweight, Freestyle, Men",6,0,0,0,,ok,123428.html
+123743,Wrestling,"Flyweight, Freestyle, Men",6,1,1,0,,ok,123743.html
+123770,Wrestling,"Bantamweight, Freestyle, Men",5,0,0,0,,ok,123770.html
+123800,Wrestling,"Featherweight, Freestyle, Men",6,0,0,0,,ok,123800.html
+123832,Wrestling,"Lightweight, Freestyle, Men",6,0,0,0,,ok,123832.html
+123872,Wrestling,"Welterweight, Freestyle, Men",5,0,0,0,,ok,123872.html
+123901,Wrestling,"Middleweight, Freestyle, Men",6,1,1,0,,ok,123901.html
+123936,Wrestling,"Light-Heavyweight, Freestyle, Men",7,1,1,0,,ok,123936.html
+123968,Wrestling,"Heavyweight, Freestyle, Men",6,0,0,0,,ok,123968.html
+123997,Wrestling,"Flyweight, Greco-Roman, Men",5,0,0,0,,ok,123997.html
+124022,Wrestling,"Bantamweight, Greco-Roman, Men",6,0,0,0,,ok,124022.html
+124052,Wrestling,"Featherweight, Greco-Roman, Men",6,0,0,0,,ok,124052.html
+124077,Wrestling,"Lightweight, Greco-Roman, Men",8,0,0,0,,ok,124077.html
+124110,Wrestling,"Welterweight, Greco-Roman, Men",6,0,0,0,,ok,124110.html
+124138,Wrestling,"Middleweight, Greco-Roman, Men",5,0,0,0,,ok,124138.html
+124160,Wrestling,"Light-Heavyweight, Greco-Roman, Men",5,0,0,0,,ok,124160.html
+124182,Wrestling,"Heavyweight, Greco-Roman, Men",6,0,0,0,,ok,124182.html
+124208,Wrestling,"Flyweight, Freestyle, Men",7,1,1,0,,ok,124208.html
+124250,Wrestling,"Bantamweight, Freestyle, Men",6,1,1,0,,ok,124250.html
+124294,Wrestling,"Featherweight, Freestyle, Men",7,0,0,0,,ok,124294.html
+124345,Wrestling,"Lightweight, Freestyle, Men",6,1,1,0,,ok,124345.html
+124397,Wrestling,"Welterweight, Freestyle, Men",6,0,0,0,,ok,124397.html
+124446,Wrestling,"Middleweight, Freestyle, Men",5,1,1,0,,ok,124446.html
+124486,Wrestling,"Light-Heavyweight, Freestyle, Men",6,1,1,0,,ok,124486.html
+124528,Wrestling,"Heavyweight, Freestyle, Men",6,0,0,0,,ok,124528.html
+124567,Wrestling,"Flyweight, Greco-Roman, Men",5,1,1,0,,ok,124567.html
+124606,Wrestling,"Bantamweight, Greco-Roman, Men",6,0,0,0,,ok,124606.html
+124658,Wrestling,"Featherweight, Greco-Roman, Men",7,0,0,0,,ok,124658.html
+124713,Wrestling,"Lightweight, Greco-Roman, Men",6,1,1,0,,ok,124713.html
+124763,Wrestling,"Welterweight, Greco-Roman, Men",7,0,0,0,,ok,124763.html
+124824,Wrestling,"Middleweight, Greco-Roman, Men",7,0,0,0,,ok,124824.html
+124873,Wrestling,"Light-Heavyweight, Greco-Roman, Men",6,1,1,0,,ok,124873.html
+124913,Wrestling,"Heavyweight, Greco-Roman, Men",4,0,0,0,,ok,124913.html
+124937,Wrestling,"Flyweight, Freestyle, Men",6,1,1,0,,ok,124937.html
+124983,Wrestling,"Bantamweight, Freestyle, Men",6,0,0,0,,ok,124983.html
+125026,Wrestling,"Featherweight, Freestyle, Men",6,1,1,0,,ok,125026.html
+125071,Wrestling,"Lightweight, Freestyle, Men",6,0,0,0,,ok,125071.html
+125116,Wrestling,"Welterweight, Freestyle, Men",6,0,0,0,,ok,125116.html
+125161,Wrestling,"Middleweight, Freestyle, Men",6,0,0,0,,ok,125161.html
+125196,Wrestling,"Light-Heavyweight, Freestyle, Men",6,0,0,0,,ok,125196.html
+125234,Wrestling,"Heavyweight, Freestyle, Men",5,1,1,0,,ok,125234.html
+125266,Wrestling,"Flyweight, Greco-Roman, Men",5,0,0,0,,ok,125266.html
+125303,Wrestling,"Bantamweight, Greco-Roman, Men",5,0,0,0,,ok,125303.html
+125340,Wrestling,"Featherweight, Greco-Roman, Men",6,0,0,0,,ok,125340.html
+125396,Wrestling,"Lightweight, Greco-Roman, Men",6,0,0,0,,ok,125396.html
+125440,Wrestling,"Welterweight, Greco-Roman, Men",6,0,0,0,,ok,125440.html
+125485,Wrestling,"Middleweight, Greco-Roman, Men",6,1,1,0,,ok,125485.html
+125527,Wrestling,"Light-Heavyweight, Greco-Roman, Men",5,0,0,0,,ok,125527.html
+125565,Wrestling,"Heavyweight, Greco-Roman, Men",6,0,0,0,,ok,125565.html
+125593,Wrestling,"Flyweight, Freestyle, Men",8,0,0,0,,ok,125593.html
+125649,Wrestling,"Bantamweight, Freestyle, Men",7,1,1,0,,ok,125649.html
+125700,Wrestling,"Featherweight, Freestyle, Men",8,0,0,0,,ok,125700.html
+125753,Wrestling,"Lightweight, Freestyle, Men",7,1,1,0,,ok,125753.html
+125807,Wrestling,"Welterweight, Freestyle, Men",6,0,0,0,,ok,125807.html
+125850,Wrestling,"Middleweight, Freestyle, Men",7,0,0,0,,ok,125850.html
+125900,Wrestling,"Light-Heavyweight, Freestyle, Men",8,0,0,0,,ok,125900.html
+125943,Wrestling,"Heavyweight, Freestyle, Men",6,1,1,0,,ok,125943.html
+125976,Wrestling,"Flyweight, Greco-Roman, Men",6,1,1,0,,ok,125976.html
+126025,Wrestling,"Bantamweight, Greco-Roman, Men",8,0,0,0,,ok,126025.html
+126080,Wrestling,"Featherweight, Greco-Roman, Men",7,1,1,0,,ok,126080.html
+126127,Wrestling,"Lightweight, Greco-Roman, Men",8,0,0,0,,ok,126127.html
+126187,Wrestling,"Welterweight, Greco-Roman, Men",5,0,0,0,,ok,126187.html
+126229,Wrestling,"Middleweight, Greco-Roman, Men",6,1,1,0,,ok,126229.html
+126272,Wrestling,"Light-Heavyweight, Greco-Roman, Men",7,0,0,0,,ok,126272.html
+126308,Wrestling,"Heavyweight, Greco-Roman, Men",7,1,1,0,,ok,126308.html
+126345,Wrestling,"Light-Flyweight, Freestyle, Men",5,0,0,0,,ok,126345.html
+126377,Wrestling,"Flyweight, Freestyle, Men",7,0,0,0,,ok,126377.html
+126431,Wrestling,"Bantamweight, Freestyle, Men",7,0,0,0,,ok,126431.html
+126494,Wrestling,"Featherweight, Freestyle, Men",7,1,1,0,,ok,126494.html
+126551,Wrestling,"Lightweight, Freestyle, Men",6,1,1,0,,ok,126551.html
+126604,Wrestling,"Welterweight, Freestyle, Men",7,0,0,0,,ok,126604.html
+126660,Wrestling,"Middleweight, Freestyle, Men",6,1,1,0,,ok,126660.html
+126710,Wrestling,"Light-Heavyweight, Freestyle, Men",6,1,1,0,,ok,126710.html
+126759,Wrestling,"Heavyweight, Freestyle, Men",6,0,0,0,,ok,126759.html
+126798,Wrestling,"Super-Heavyweight, Freestyle, Men",6,1,1,0,,ok,126798.html
+126830,Wrestling,"Light-Flyweight, Greco-Roman, Men",6,0,0,0,,ok,126830.html
+126916,Wrestling,"Bantamweight, Greco-Roman, Men",8,0,0,0,,ok,126916.html
+126977,Wrestling,"Featherweight, Greco-Roman, Men",6,0,0,0,,ok,126977.html
+127021,Wrestling,"Lightweight, Greco-Roman, Men",6,0,0,0,,ok,127021.html
+127069,Wrestling,"Welterweight, Greco-Roman, Men",6,0,0,0,,ok,127069.html
+127112,Wrestling,"Middleweight, Greco-Roman, Men",6,0,0,0,,ok,127112.html
+127155,Wrestling,"Light-Heavyweight, Greco-Roman, Men",6,0,0,0,,ok,127155.html
+127190,Wrestling,"Heavyweight, Greco-Roman, Men",6,1,1,0,,ok,127190.html
+127221,Wrestling,"Super-Heavyweight, Greco-Roman, Men",5,0,0,0,,ok,127221.html
+127248,Wrestling,"Light-Flyweight, Freestyle, Men",6,1,1,0,,ok,127248.html
+127289,Wrestling,"Flyweight, Freestyle, Men",6,1,1,0,,ok,127289.html
+127331,Wrestling,"Bantamweight, Freestyle, Men",6,0,0,0,,ok,127331.html
+127382,Wrestling,"Featherweight, Freestyle, Men",7,1,1,0,,ok,127382.html
+127425,Wrestling,"Lightweight, Freestyle, Men",6,1,1,0,,ok,127425.html
+127478,Wrestling,"Welterweight, Freestyle, Men",6,1,1,0,,ok,127478.html
+127524,Wrestling,"Middleweight, Freestyle, Men",6,1,1,0,,ok,127524.html
+127565,Wrestling,"Light-Heavyweight, Freestyle, Men",7,1,1,0,,ok,127565.html
+127614,Wrestling,"Heavyweight, Freestyle, Men",6,1,1,0,,ok,127614.html
+127646,Wrestling,"Super-Heavyweight, Freestyle, Men",6,1,1,0,,ok,127646.html
+127684,Wrestling,"Light-Flyweight, Greco-Roman, Men",6,1,1,0,,ok,127684.html
+127720,Wrestling,"Flyweight, Greco-Roman, Men",6,0,0,0,,ok,127720.html
+127755,Wrestling,"Bantamweight, Greco-Roman, Men",7,0,0,0,,ok,127755.html
+127799,Wrestling,"Featherweight, Greco-Roman, Men",7,0,0,0,,ok,127799.html
+127843,Wrestling,"Lightweight, Greco-Roman, Men",6,0,0,0,,ok,127843.html
+127889,Wrestling,"Welterweight, Greco-Roman, Men",6,0,0,0,,ok,127889.html
+127929,Wrestling,"Middleweight, Greco-Roman, Men",6,0,0,0,,ok,127929.html
+127969,Wrestling,"Light-Heavyweight, Greco-Roman, Men",6,0,0,0,,ok,127969.html
+128000,Wrestling,"Heavyweight, Greco-Roman, Men",5,1,1,0,,ok,128000.html
+128030,Wrestling,"Super-Heavyweight, Greco-Roman, Men",5,0,0,0,,ok,128030.html
+129571,Wrestling,"Light-Flyweight, Freestyle, Men",13,1,1,0,,ok,129571.html
+129626,Wrestling,"Flyweight, Freestyle, Men",14,0,0,0,,ok,129626.html
+129703,Wrestling,"Bantamweight, Freestyle, Men",14,0,0,0,,ok,129703.html
+129773,Wrestling,"Featherweight, Freestyle, Men",14,1,1,0,,ok,129773.html
+129845,Wrestling,"Lightweight, Freestyle, Men",15,0,0,0,,ok,129845.html
+129931,Wrestling,"Welterweight, Freestyle, Men",15,1,1,0,,ok,129931.html
+130015,Wrestling,"Middleweight, Freestyle, Men",14,1,1,0,,ok,130015.html
+130094,Wrestling,"Light-Heavyweight, Freestyle, Men",14,0,0,0,,ok,130094.html
+130167,Wrestling,"Heavyweight, Freestyle, Men",13,0,0,0,,ok,130167.html
+130229,Wrestling,"Super-Heavyweight, Freestyle, Men",10,1,1,0,,ok,130229.html
+130271,Wrestling,"Light-Flyweight, Greco-Roman, Men",9,0,0,0,,ok,130271.html
+130312,Wrestling,"Flyweight, Greco-Roman, Men",14,0,0,0,,ok,130312.html
+130374,Wrestling,"Bantamweight, Greco-Roman, Men",12,0,0,0,,ok,130374.html
+130430,Wrestling,"Featherweight, Greco-Roman, Men",10,1,1,0,,ok,130430.html
+130475,Wrestling,"Lightweight, Greco-Roman, Men",13,1,1,0,,ok,130475.html
+130552,Wrestling,"Welterweight, Greco-Roman, Men",13,0,0,0,,ok,130552.html
+130607,Wrestling,"Middleweight, Greco-Roman, Men",13,0,0,0,,ok,130607.html
+130667,Wrestling,"Light-Heavyweight, Greco-Roman, Men",12,0,0,0,,ok,130667.html
+130729,Wrestling,"Heavyweight, Greco-Roman, Men",14,1,1,0,,ok,130729.html
+130789,Wrestling,"Super-Heavyweight, Greco-Roman, Men",10,1,1,0,,ok,130789.html
+900151,Tennis,"Singles, Men",5,1,1,0,,ok,900151.html
+900189,Tennis,"Doubles, Men",4,0,0,0,,ok,900189.html
+900209,Tennis,"Singles, Women",4,0,0,0,,ok,900209.html
+900237,Tennis,"Doubles, Mixed",4,0,0,0,,ok,900237.html
+900254,Tennis,"Singles, Men",5,1,1,0,,ok,900254.html
+900273,Tennis,"Doubles, Men",3,0,0,0,,ok,900273.html
+900283,Tennis,"Singles, Women",4,1,1,0,,ok,900283.html
+900297,Tennis,"Doubles, Women",3,0,0,0,,ok,900297.html
+900305,Tennis,"Doubles, Mixed",4,0,0,0,,ok,900305.html
