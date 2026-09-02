@@ -1,0 +1,898 @@
+:root {
+  --cw-color-usa: #32689a;
+  --cw-color-ussr: #a94747;
+  --cw-color-draw: #858a90;
+  --cw-color-neutral: #d9dde1;
+  --cw-color-selected: #202428;
+  --cw-color-battle-focus-usa-deep: #173a59;
+  --cw-color-battle-focus-ussr-deep: #5c2525;
+
+  --cw-color-gold: #d4af37;
+  --cw-color-silver: #aeb9c1;
+  --cw-color-bronze: #b87a46;
+
+  --cw-color-boycott: #742e8b;
+  --cw-color-no-medal: #eef1f3;
+  --cw-color-non-participant: #f5f6f7;
+
+  --cw-color-total-light: #edf8f6;
+  --cw-color-total-dark: #0b5d57;
+  --cw-color-gold-light: #fff8d8;
+  --cw-color-gold-dark: #a87400;
+
+  /* Shared chart/UI neutrals. */
+  --cw-color-grid: #dfe3e6;
+  --cw-color-control-border: #e2e5e8;
+  --cw-color-control-label: #687078;
+  --cw-color-map-surface: #fafbfb;
+  --cw-color-panel-surface: #fbfbfb;
+  --cw-color-medal-axis-title: #555d63;
+  --cw-color-axis-stroke: #b9bec3;
+  --cw-color-axis-text: #4f555a;
+  --cw-color-label: #3d4348;
+  --cw-color-map-status-label: #596167;
+  --cw-color-map-status-border: #c6ccd1;
+  --cw-color-pulse-grid: #d5dbe0;
+  --cw-color-mark-outline: rgba(255, 255, 255, 0.92);
+  --cw-color-legend-text: #4f565c;
+  --cw-color-medal-header-text: #6b7176;
+  --cw-color-medal-legend-text: #555555;
+  --cw-color-medal-row-hover: #f0f3f5;
+  --cw-color-medal-row-selected: #e8edf1;
+  --cw-color-medal-row-selected-stroke: #3d4449;
+  --cw-color-medal-superpower-stroke: #bfc5ca;
+  --cw-color-olympic-hover: #223949;
+  --cw-color-zero-line: #2f353a;
+  --cw-color-front-usa: var(--cw-color-usa);
+  --cw-color-front-ussr: var(--cw-color-ussr);
+  --cw-color-hover-guide: #a8a8a8;
+  --cw-color-olympic-guide: #c9ced3;
+
+  /* Boycott supporting surfaces. Change independently only if desired. */
+  --cw-color-boycott-surface: #faf6ea;
+  --cw-color-boycott-text: #5c4a21;
+
+  /* Help/tooltip surfaces. */
+  --cw-color-help-neutral: #484b4d;
+  --cw-color-help-title: #333333;
+  --cw-color-help-border: #dddddd;
+  --cw-help-accent: #2e7d32;
+  --cw-color-overlay-surface: rgba(255, 255, 255, 0.85);
+  --cw-color-sticky-surface: rgba(255, 255, 255, 0.98);
+  --cw-color-tooltip-border: rgba(0, 0, 0, 0.14);
+  --cw-color-tooltip-surface: rgba(255, 255, 255, 0.98);
+  --cw-color-tooltip-shadow: rgba(0, 0, 0, 0.13);
+  --cw-color-panel-shadow: rgba(0, 0, 0, 0.04);
+  --cw-color-line-shadow: rgba(0, 0, 0, 0.10);
+  --cw-color-help-shadow: rgba(0, 0, 0, 0.20);
+
+  /* ---------------------------------------------------------------------- */
+  /* Reusable visual geometry/state tokens.                                  */
+  /* ---------------------------------------------------------------------- */
+  --cw-country-stroke-normal: 0.55;
+  --cw-country-stroke-boycott: 1.8;
+  --cw-country-stroke-highlight: 1.5;
+  --cw-country-boycott-dash: 5 3;
+  --cw-country-stroke-color: var(--paper);
+
+  --cw-map-status-stroke-width: 1.6;
+  --cw-map-status-boycott-dash: 4 2;
+
+  /* Shared boycott marker component (Local Ripple + Rivalry Pulse). */
+  --cw-boycott-marker-stroke-width: 1.4;
+  --cw-boycott-marker-dash: 5 4;
+  --cw-boycott-marker-label-size: 12px;
+
+  --cw-arms-opacity-default: 0.28;
+  --cw-arms-opacity-focus: 0.68;
+  --cw-arms-opacity-dim: 0.10;
+  --cw-arms-line-opacity-dim: 0.28;
+  --cw-arms-line-width: 2.1;
+  --cw-arms-line-width-pinned: 3;
+  --cw-arms-focus-transition: 260ms;
+
+  --cw-pulse-dot-stroke-width: 1;
+  --cw-focus-transition: 200ms;
+  --cw-focus-dim-opacity: .14;
+}
+
+.cw-section { padding-top: 2rem; }
+.cw-chart-unit { position: relative; }
+.cw-chart-frame,
+.cw-world-map,
+.cw-medal-panel {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--paper);
+  box-shadow: 0 2px 10px var(--cw-color-panel-shadow);
+}
+.cw-responsive-svg { width: 100%; height: auto; position: relative; display: block; overflow: hidden; }
+.cw-responsive-svg svg { width: 100%; height: auto; display: block; max-width: 100%; }
+
+.cw-control-row {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  gap: .8rem;
+  margin: 0 auto 1rem;
+  padding: .7rem .9rem;
+  width: fit-content;
+  max-width: 100%;
+  border: 1px solid var(--cw-color-control-border);
+  border-radius: 10px;
+  background: var(--paper);
+  box-shadow: 0 2px 10px var(--cw-color-panel-shadow);
+}
+.cw-control-group { min-width: 155px; }
+.cw-control-group label,
+.cw-timeline-control label {
+  display: block;
+  margin-bottom: .2rem;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  font-size: var(--type-chart-small);
+  font-weight: 700;
+  color: var(--cw-color-control-label);
+}
+.cw-timeline-control { min-width: min(430px, 40vw); }
+.cw-timeline-control .form-range { margin: 0; }
+.cw-timeline-control strong {
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.cw-world-map-shell { position: relative; min-width: 0; }
+.cw-world-map {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1000 / 700;
+  overflow: hidden;
+  background: var(--cw-color-map-surface);
+}
+.cw-world-map > svg {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+  max-width: 100%;
+}
+.cw-zoom-controls { position: absolute; right: 10px; top: 10px; display: flex; flex-direction: column; gap: 5px; z-index: 4; }
+.cw-zoom-button {
+  border-color: var(--cw-color-control-border);
+  background: var(--paper);
+  color: var(--cw-color-axis-text);
+  font-weight: 700;
+}
+
+.cw-zoom-button:hover {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--paper);
+}
+
+.cw-zoom-button:focus-visible {
+  box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--accent) 28%, transparent);
+}
+.cw-zoom-controls button { width: 34px; height: 32px; line-height: 1; }
+
+/* Final coordinated World Stage + Medal Race layout.
+ * The desktop split is 64/36; below Bootstrap lg the views stack. */
+.cw-world-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+  align-items: stretch;
+  width: 100%;
+  min-width: 0;
+}
+
+.cw-world-layout > * {
+  min-width: 0;
+}
+
+.cw-world-underlay {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+  align-items: center;
+  width: 100%;
+  margin-top: .8rem;
+}
+
+@media (min-width: 1000px) {
+  .cw-world-layout--map-led,
+  .cw-world-underlay {
+    grid-template-columns: minmax(0, 1.78fr) minmax(300px, 1fr);
+  }
+}
+
+.cw-medal-panel-wrap {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+}
+.cw-medal-panel {
+  flex: 1 1 auto;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  padding: .55rem;
+  overflow: hidden;
+  background: var(--cw-color-panel-surface);
+}
+.cw-medal-race {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: var(--paper);
+  border-radius: 7px;
+  outline: none;
+  scrollbar-gutter: stable;
+}
+.cw-medal-race-axis-svg {
+  position: sticky;
+  top: 0;
+  z-index: 4;
+  display: block;
+  width: 100%;
+  background: var(--cw-color-tooltip-surface);
+  border-bottom: 1px solid var(--cw-color-control-border);
+}
+.cw-medal-race-body-svg { display: block; width: 100%; min-width: 0; overflow: visible; }
+.cw-medal-axis-title { font-family: var(--font-interface); font-size: var(--type-chart-small); font-weight: 700; fill: var(--cw-color-medal-axis-title); text-transform: uppercase; letter-spacing: .04em; }
+.cw-medal-grid-line { stroke: var(--cw-color-axis-stroke); stroke-width: 1; stroke-opacity: .58; stroke-dasharray: 4 4; }
+.cw-boycott-strip {
+  flex: 0 0 auto;
+  margin-top: .55rem;
+  margin-bottom: 0;
+  padding: .55rem .7rem;
+  border-left: 3px solid var(--cw-color-boycott);
+  background: var(--cw-color-boycott-surface);
+  color: var(--cw-color-boycott-text);
+  font-size: .83rem;
+  line-height: 1.35;
+}
+.cw-boycott-symbol {
+  display: inline-block;
+  width: 16px;
+  height: 10px;
+  margin-right: .4rem;
+  vertical-align: -1px;
+  border: 1.5px dashed var(--cw-color-boycott);
+  background: var(--cw-color-no-medal);
+}
+.cw-boycott-strip.active {
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--cw-color-boycott) 25%, transparent);
+  font-weight: 700;
+}
+
+.cw-medal-composition-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  min-width: 0;
+}
+.cw-medal-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 6px;
+  white-space: nowrap;
+}
+.cw-medal-legend-marker {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex: 0 0 auto;
+}
+.cw-medal-legend-marker.gold { background: var(--cw-color-gold); }
+.cw-medal-legend-marker.silver { background: var(--cw-color-silver); }
+.cw-medal-legend-marker.bronze { background: var(--cw-color-bronze); }
+.cw-medal-legend-text {
+  font-family: var(--font-interface);
+  font-size: var(--type-chart-small);
+  font-weight: 700;
+  color: var(--cw-color-legend-text);
+  text-transform: uppercase;
+  letter-spacing: .03em;
+}
+.cw-legend-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: .8rem;
+}
+.cw-legend-item {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  padding: .15rem .1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  color: var(--cw-color-legend-text);
+  font-family: var(--font-interface);
+  font-size: var(--type-chart-small);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  cursor: pointer;
+  opacity: 1;
+}
+.cw-legend-item { transition: opacity var(--cw-focus-transition) ease, color var(--cw-focus-transition) ease; }
+.cw-legend-item.is-dimmed { opacity: .38; }
+.cw-legend-item.is-active { color: var(--ink); }
+.cw-legend-item[disabled] { cursor: default; }
+.cw-legend-swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex: 0 0 auto;
+}
+.cw-dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: .25rem; vertical-align: 0; }
+.cw-dot.gold, .cw-legend-swatch.gold { background: var(--cw-color-gold); }
+.cw-dot.silver, .cw-legend-swatch.silver { background: var(--cw-color-silver); }
+.cw-dot.bronze, .cw-legend-swatch.bronze { background: var(--cw-color-bronze); }
+.cw-dot.usa, .cw-legend-swatch.usa { background: var(--cw-color-usa); }
+.cw-dot.ussr, .cw-legend-swatch.ussr { background: var(--cw-color-ussr); }
+.cw-dot.draw, .cw-legend-swatch.draw { background: var(--cw-color-draw); }
+
+/* -------------------------------------------------------------------------- */
+/* Class-driven D3 presentation                                               */
+/* -------------------------------------------------------------------------- */
+
+/* Shared categorical fills. D3 assigns semantic classes; CSS owns colors. */
+.cw-fill-usa { fill: var(--cw-color-usa); }
+.cw-fill-ussr { fill: var(--cw-color-ussr); }
+.cw-fill-draw { fill: var(--cw-color-draw); }
+
+/* Arms Race: JS owns focus state; CSS owns the visual treatment. */
+.cw-arms-series.cw-series-usa .cw-arms-area { fill: var(--cw-color-usa); }
+.cw-arms-series.cw-series-ussr .cw-arms-area { fill: var(--cw-color-ussr); }
+.cw-arms-series.cw-series-usa .cw-arms-line { stroke: var(--cw-color-usa); }
+.cw-arms-series.cw-series-ussr .cw-arms-line { stroke: var(--cw-color-ussr); }
+.cw-arms-area {
+  fill-opacity: var(--cw-arms-opacity-default);
+  cursor: pointer;
+  transition: fill-opacity var(--cw-arms-focus-transition) ease;
+}
+.cw-arms-line {
+  fill: none;
+  stroke-width: var(--cw-arms-line-width);
+  stroke-opacity: 1;
+  pointer-events: none;
+  transition:
+    stroke-opacity var(--cw-arms-focus-transition) ease,
+    stroke-width var(--cw-arms-focus-transition) ease;
+}
+.cw-arms-series.is-pinned .cw-arms-area { fill-opacity: var(--cw-arms-opacity-focus); }
+.cw-arms-series.is-pinned .cw-arms-line { stroke-width: var(--cw-arms-line-width-pinned); }
+.cw-arms-series.is-dimmed .cw-arms-area { fill-opacity: var(--cw-arms-opacity-dim); }
+.cw-arms-series.is-dimmed .cw-arms-line { stroke-opacity: var(--cw-arms-line-opacity-dim); }
+
+/* Medal Race stacked-bar colors. */
+.cw-segment.cw-gold { fill: var(--cw-color-gold); }
+.cw-segment.cw-silver { fill: var(--cw-color-silver); }
+.cw-segment.cw-bronze { fill: var(--cw-color-bronze); }
+
+/* Sporting Fronts categorical direction. */
+.cw-sf-bar.is-usa-advantage { fill: var(--cw-color-usa); }
+.cw-sf-bar.is-ussr-advantage { fill: var(--cw-color-ussr); }
+.cw-sf-bar.is-draw { fill: var(--cw-color-draw); }
+
+/* Rivalry Pulse outcomes. */
+.cw-pulse-dot.is-usa-win { fill: var(--cw-color-usa); }
+.cw-pulse-dot.is-ussr-win { fill: var(--cw-color-ussr); }
+.cw-pulse-dot.is-draw { fill: var(--cw-color-draw); }
+.cw-pulse-grid-line {
+  stroke: var(--cw-color-grid);
+  stroke-opacity: .7;
+  stroke-dasharray: 4 4;
+}
+
+/* World Stage country outline state. Selection/hover intentionally wins over boycott. */
+.cw-world-country {
+  stroke: var(--cw-country-stroke-color);
+  stroke-width: var(--cw-country-stroke-normal);
+  stroke-dasharray: none;
+}
+.cw-world-country.is-boycott {
+  stroke: var(--cw-color-boycott);
+  stroke-width: var(--cw-country-stroke-boycott);
+  stroke-dasharray: var(--cw-country-boycott-dash);
+}
+.cw-world-country.is-selected,
+.cw-world-country.is-hovered {
+  stroke: var(--cw-color-selected);
+  stroke-width: var(--cw-country-stroke-highlight);
+  stroke-dasharray: none;
+}
+
+.cw-map-status-swatch {
+  fill: var(--cw-color-no-medal);
+  stroke: var(--cw-color-map-status-border);
+}
+.cw-map-status-swatch.is-boycott {
+  stroke: var(--cw-color-boycott);
+  stroke-width: var(--cw-map-status-stroke-width);
+  stroke-dasharray: var(--cw-map-status-boycott-dash);
+}
+
+.chart-help-host,
+.cw-world-help-slot {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+.chart-help-host {
+  margin-top: .8rem;
+}
+
+/* Chart help intentionally mirrors IronNeverden's interaction and layout. */
+.chart-help-trigger {
+  margin-top: 0 !important;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.chart-help-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  background: var(--cw-color-help-neutral);
+  color: var(--paper);
+  border-radius: 50%;
+  font-family: serif;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 12px;
+}
+
+.chart-help-text {
+  font-family: var(--font-interface);
+  font-weight: 700;
+  font-size: 12px;
+  color: var(--cw-color-help-neutral);
+}
+
+.chart-help-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--cw-color-overlay-surface);
+  z-index: 500;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(2px);
+  pointer-events: none;
+}
+
+.chart-help-content {
+  background: var(--paper);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px var(--cw-color-help-shadow);
+  border: 1px solid var(--cw-color-help-border);
+  max-width: 700px;
+  text-align: center;
+  font-family: var(--font-interface);
+}
+
+.chart-help-content h4 {
+  margin: 0;
+  color: var(--cw-color-help-title);
+}
+
+.chart-help-divider {
+  height: 2px;
+  width: 50px;
+  background: var(--cw-help-accent);
+  margin: 10px auto;
+}
+
+.chart-help-content ul {
+  text-align: left;
+  padding-left: 20px;
+  line-height: 1.6;
+  color: var(--cw-color-help-neutral);
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+.cw-medal-header text { font-size: var(--type-chart-small); font-weight: 700; fill: var(--cw-color-medal-header-text); text-transform: uppercase; letter-spacing: .04em; }
+.cw-medal-row-bg { fill: transparent; }
+.cw-medal-row:hover .cw-medal-row-bg,
+.cw-medal-row.hovered .cw-medal-row-bg { fill: var(--cw-color-medal-row-hover); }
+.cw-medal-row.selected .cw-medal-row-bg { fill: var(--cw-color-medal-row-selected); stroke: var(--cw-color-medal-row-selected-stroke); stroke-width: 1; }
+.cw-medal-row.superpower .cw-medal-country { font-weight: 700; }
+.cw-medal-row.superpower .cw-medal-row-bg { stroke: var(--cw-color-medal-superpower-stroke); stroke-width: .8; }
+.cw-medal-row.dimmed { opacity: .24; }
+.cw-medal-rank, .cw-medal-country, .cw-medal-total { font-family: var(--font-interface); font-size: 13px; fill: var(--ink); }
+.cw-medal-total { font-weight: 700; font-variant-numeric: tabular-nums; }
+
+.cw-axis text { font-family: var(--font-interface); font-size: var(--type-axis); font-weight: 400; fill: var(--cw-color-axis-text); }
+.cw-axis path, .cw-axis line { stroke: var(--cw-color-axis-stroke); }
+.cw-grid line { stroke: var(--cw-color-grid); }
+.cw-grid path { display: none; }
+.cw-axis-label, .cw-front-label, .cw-small-label, .cw-annotation, .cw-legend-title, .cw-legend-text { font-family: var(--font-interface); fill: var(--cw-color-label); }
+.cw-axis-label { font-size: var(--type-chart-label); font-weight: 700; }
+.cw-front-label { font-size: var(--type-chart-label); font-weight: 700; }
+.cw-small-label, .cw-annotation { font-size: var(--type-chart-small); }
+.cw-legend-title { font-size: var(--type-chart-small); font-weight: 700; }
+.cw-legend-text { font-size: var(--type-chart-small); }
+.cw-map-legend-axis text { font-size: var(--type-chart-small); }
+.cw-map-status-label { font-family: var(--font-interface); font-size: var(--type-chart-small); fill: var(--cw-color-map-status-label); }
+.cw-boycott-line { stroke: var(--cw-color-boycott); stroke-width: 1; stroke-dasharray: 4 4; opacity: .7; }
+.cw-arms-legend-button.active text { font-weight: 700; }
+.cw-olympic-tick:hover text { fill: var(--cw-color-olympic-hover); }
+
+.cw-sf-zero { stroke: var(--cw-color-zero-line); stroke-width: 1.2; }
+.cw-sf-bar { cursor: pointer; }
+.cw-sf-y .domain { display: none; }
+.cw-sf-y text { font-size: var(--type-chart-category); font-weight: 700; }
+
+.cw-pulse-dot { stroke: var(--cw-color-mark-outline); stroke-width: var(--cw-pulse-dot-stroke-width); cursor: pointer; }
+
+/* Shared legend-focus behavior. JS only toggles these semantic classes. */
+.cw-focus-target {
+  transition: opacity var(--cw-focus-transition) ease, stroke-width var(--cw-focus-transition) ease;
+}
+.cw-focus-target.is-focus-dimmed { opacity: var(--cw-focus-dim-opacity); }
+
+.cw-tooltip {
+  position: fixed;
+  z-index: 10000;
+  min-width: 190px;
+  max-width: 330px;
+  padding: .7rem .8rem;
+  border: 1px solid var(--cw-color-tooltip-border);
+  border-radius: 7px;
+  background: var(--cw-color-tooltip-surface);
+  box-shadow: 0 7px 25px var(--cw-color-tooltip-shadow);
+  pointer-events: none;
+  font-family: var(--font-interface);
+  font-size: var(--type-tooltip);
+  line-height: 1.45;
+}
+.cw-tooltip-title { font-weight: 700; font-size: var(--type-tooltip-title); margin-bottom: .15rem; }
+.cw-tooltip-subtitle { color: var(--muted); font-size: var(--type-chart-small); margin-bottom: .35rem; }
+.cw-tooltip-row { display: flex; justify-content: space-between; gap: 1rem; margin-top: .2rem; }
+.cw-tooltip-row span { color: var(--muted); }
+.cw-tooltip-row strong { text-align: right; font-variant-numeric: tabular-nums; }
+.cw-rivalry-tooltip-participants {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: .3rem .45rem;
+  font-size: var(--type-tooltip);
+  font-weight: 700;
+  line-height: 1.4;
+}
+.cw-rivalry-tooltip-participant.is-usa,
+.cw-rivalry-tooltip-winner.is-usa { color: var(--cw-color-usa); }
+.cw-rivalry-tooltip-participant.is-ussr,
+.cw-rivalry-tooltip-winner.is-ussr { color: var(--cw-color-ussr); }
+.cw-rivalry-tooltip-versus,
+.cw-rivalry-tooltip-winner.is-draw { color: var(--cw-color-axis-text); }
+
+@media (max-width: 767.98px) {
+  .cw-section { padding-top: 1.25rem; }
+  .cw-control-row { width: 100%; justify-content: flex-start; flex-wrap: nowrap; overflow-x: auto; padding-bottom: .85rem; }
+  .cw-control-group { min-width: 155px; flex: 0 0 auto; }
+  .cw-timeline-control { min-width: 280px; flex: 0 0 auto; }
+  .cw-medal-panel-wrap { height: auto !important; }
+  .cw-medal-race { height: 100%; }
+  .cw-pulse-legend { flex: 0 0 auto; min-width: 260px; }
+  .cw-medal-composition-legend { justify-content: flex-start; gap: 10px; row-gap: 5px; }
+  .cw-medal-legend-item { padding: 2px 4px; }
+  .cw-medal-legend-text { font-size: var(--type-chart-small); }
+}
+
+.cw-medal-x-axis .domain { display: none; }
+.cw-medal-x-axis text { font-size: var(--type-chart-small); }
+.cw-medal-x-axis .tick line { stroke-opacity: .7; stroke-dasharray: 4 4; }
+
+
+/* -------------------------------------------------------------------------- */
+/* v3.28 — IronNeverden-inspired chart typography and quantitative grammar    */
+/* -------------------------------------------------------------------------- */
+
+.cw-chart-theme-universal .cw-axis text {
+  font-family: var(--font-interface);
+  font-size: var(--type-axis);
+  font-weight: 400;
+  fill: var(--cw-color-axis-text);
+}
+
+.cw-chart-theme-universal .cw-grid line {
+  stroke: var(--cw-color-grid);
+  stroke-opacity: .7;
+  stroke-dasharray: 4 4;
+}
+
+.cw-chart-theme-universal .cw-grid path {
+  display: none;
+}
+
+.cw-chart-theme-universal .cw-line-path {
+  fill: none;
+  stroke-linecap: round;
+  filter: drop-shadow(0 2px 2px var(--cw-color-line-shadow));
+}
+
+/* Arms Race: secondary Olympic guides + IronNeverden-style crosshair. */
+.cw-arms-olympic-line {
+  stroke: var(--cw-color-olympic-guide);
+  stroke-width: 1;
+  stroke-opacity: .65;
+  stroke-dasharray: 2 5;
+}
+.cw-arms-olympic-line.is-boycott {
+  stroke: var(--cw-color-boycott);
+  stroke-opacity: .72;
+  stroke-dasharray: 4 4;
+}
+.cw-arms-olympic-year {
+  font-family: var(--font-interface);
+  font-size: var(--type-chart-small);
+  font-weight: 400;
+  fill: var(--muted);
+}
+.cw-arms-boycott-annotation {
+  font-family: var(--font-interface);
+  font-size: var(--type-chart-small);
+  font-weight: 700;
+  fill: var(--cw-color-boycott);
+}
+.cw-hover-guide {
+  stroke: var(--cw-color-hover-guide);
+  stroke-width: 1;
+  stroke-opacity: .9;
+  stroke-dasharray: 4 4;
+}
+.cw-arms-hover-dot {
+  stroke: var(--paper);
+  stroke-width: 1.5;
+}
+.cw-arms-hover-dot.is-usa { fill: var(--cw-color-usa); }
+.cw-arms-hover-dot.is-ussr { fill: var(--cw-color-ussr); }
+.cw-arms-interaction-overlay { cursor: crosshair; }
+.cw-tooltip-label { display: inline-flex; align-items: center; gap: 7px; }
+.cw-tooltip-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; flex: 0 0 auto; }
+.cw-tooltip-dot.usa { background: var(--cw-color-usa); }
+.cw-tooltip-dot.ussr { background: var(--cw-color-ussr); }
+.cw-tooltip-divider { height: 1px; margin: .45rem 0 .35rem; background: var(--line); }
+.cw-tooltip-row.dimmed { opacity: .3; }
+.cw-tooltip-difference.is-usa strong { color: var(--cw-color-usa); }
+.cw-tooltip-difference.is-ussr strong { color: var(--cw-color-ussr); }
+
+/* World Stage + Medal Race: desktop stays 64/36; compact mode stacks and
+ * exposes roughly five Medal Race rows at a time while preserving scrolling. */
+@media (max-width: 999.98px) {
+  .cw-world-layout,
+  .cw-world-underlay {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .cw-medal-panel-wrap {
+    height: auto !important;
+  }
+
+  .cw-medal-panel {
+    flex: 0 0 auto;
+    height: 232px;
+  }
+
+  .cw-medal-race {
+    height: 100%;
+  }
+}
+
+/* Sporting Fronts follows the reference divergent-bar treatment: a quiet
+ * top scale, dashed vertical guides, semi-bold categories, and neutral values. */
+.cw-sf-grid line {
+  stroke: #a8a8a8;
+  stroke-opacity: .7;
+  stroke-dasharray: 4 4;
+}
+.cw-sf-x .domain { display: none; }
+.cw-chart-theme-universal .cw-sf-x text { font-size: var(--type-axis); font-weight: 400; }
+.cw-chart-theme-universal .cw-sf-y text {
+  font-size: var(--type-chart-category);
+  font-weight: 700;
+}
+.cw-sf-value-label {
+  font-family: var(--font-interface);
+  font-size: var(--type-chart-small);
+  font-weight: 400;
+  fill: var(--cw-color-axis-text);
+}
+.cw-sf-usa-advantage { fill: var(--cw-color-front-usa); }
+.cw-sf-ussr-advantage { fill: var(--cw-color-front-ussr); }
+.cw-sf-zero {
+  stroke: var(--cw-color-zero-line);
+  stroke-width: 1.4;
+}
+
+/* Rivalry Pulse keeps a fixed global Y scale; axis remains present but quiet. */
+.cw-chart-theme-universal .cw-pulse-y-axis text { font-size: var(--type-axis); font-weight: 400; fill: var(--muted); }
+.cw-chart-theme-universal .cw-pulse-x-axis text { font-size: var(--type-axis); font-weight: 400; }
+.cw-pulse-y-grid line { stroke-opacity: .55; }
+
+/* Shared boycott marker: empty dotted rectangle + label.
+ * Geometry belongs to each visualization; appearance is identical everywhere. */
+.cw-boycott-marker { pointer-events: none; }
+.cw-boycott-marker-rect {
+  fill: none;
+  stroke: var(--cw-color-boycott);
+  stroke-width: var(--cw-boycott-marker-stroke-width);
+  stroke-dasharray: var(--cw-boycott-marker-dash);
+}
+.cw-boycott-marker-label {
+  font-family: var(--font-interface);
+  font-size: var(--cw-boycott-marker-label-size);
+  font-weight: 700;
+  fill: var(--cw-color-boycott);
+}
+
+/* -------------------------------------------------------------------------- */
+/* v3.31 — Battle Strip Local Ripple                                           */
+/* -------------------------------------------------------------------------- */
+
+.cw-battle-baseline {
+  stroke: var(--cw-color-axis-stroke);
+  stroke-width: 1.5;
+}
+
+.cw-chart-theme-universal .cw-battle-x-axis text { font-size: var(--type-axis); font-weight: 400; }
+
+.cw-battle-point {
+  cursor: pointer;
+  stroke-width: 2;
+  filter: drop-shadow(0 2px 2px var(--cw-color-line-shadow));
+  outline: none;
+  transition:
+    fill var(--cw-battle-focus-transition),
+    stroke var(--cw-battle-focus-transition),
+    stroke-width var(--cw-battle-focus-transition),
+    opacity var(--cw-battle-focus-transition);
+}
+
+.cw-battle-point.is-usa {
+  fill: var(--cw-color-usa);
+  stroke: var(--cw-color-usa);
+}
+
+.cw-battle-point.is-ussr {
+  fill: var(--cw-color-ussr);
+  stroke: var(--cw-color-ussr);
+}
+
+.cw-battle-point.is-draw {
+  fill: var(--cw-color-draw);
+  stroke: var(--cw-color-draw);
+}
+
+.cw-battle-point:focus-visible {
+  stroke-width: 5;
+  filter: drop-shadow(0 0 5px rgba(32, 36, 40, .35));
+}
+
+.cw-battle-point.is-context { opacity: .68; }
+.cw-battle-point.is-expanded { opacity: 1; stroke-width: 4; }
+
+.cw-battle-summary-title {
+  font-family: var(--font-interface);
+  font-size: var(--type-chart-label);
+  font-weight: 700;
+  fill: var(--cw-color-axis-text);
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+.cw-battle-summary-value {
+  font-family: var(--font-interface);
+  font-size: 23px;
+  font-weight: 700;
+  fill: var(--ink);
+}
+
+.cw-battle-size-item circle {
+  fill: rgba(79, 85, 90, .06);
+  stroke: var(--cw-color-axis-text);
+  stroke-width: 1.4;
+}
+
+.cw-battle-size-item text,
+.cw-battle-size-title,
+.cw-battle-size-unit {
+  font-family: var(--font-interface);
+  fill: var(--cw-color-axis-text);
+}
+
+.cw-battle-size-item text { font-size: var(--type-chart-small); font-weight: 400; }
+.cw-battle-size-title { font-size: var(--type-chart-small); font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
+.cw-battle-size-unit { font-size: var(--type-chart-small); font-weight: 400; }
+
+.cw-battle-focus {
+  filter: drop-shadow(0 7px 9px rgba(0, 0, 0, .17));
+}
+
+.cw-battle-focus-inner { fill: rgba(17, 21, 25, .24); }
+
+/* Final Local Ripple treatment: a darker tint preserves the winner colour on focus. */
+.cw-battle-variant .cw-battle-point.is-expanded.is-usa {
+  fill: var(--cw-color-battle-focus-usa-deep);
+  stroke: var(--cw-color-battle-focus-usa-deep);
+}
+.cw-battle-variant .cw-battle-focus.is-usa .cw-battle-focus-inner {
+  fill: var(--cw-color-battle-focus-usa-deep);
+}
+.cw-battle-variant .cw-battle-point.is-expanded.is-ussr {
+  fill: var(--cw-color-battle-focus-ussr-deep);
+  stroke: var(--cw-color-battle-focus-ussr-deep);
+}
+.cw-battle-variant .cw-battle-focus.is-ussr .cw-battle-focus-inner {
+  fill: var(--cw-color-battle-focus-ussr-deep);
+}
+.cw-battle-variant .cw-battle-point.is-expanded.is-draw {
+  fill: var(--cw-color-selected);
+  stroke: var(--cw-color-selected);
+}
+.cw-battle-variant .cw-battle-focus.is-draw .cw-battle-focus-inner {
+  fill: var(--cw-color-selected);
+}
+
+.cw-battle-donut-segment.is-usa { fill: var(--cw-color-usa); }
+.cw-battle-donut-segment.is-ussr { fill: var(--cw-color-ussr); }
+
+.cw-battle-focus-margin,
+.cw-battle-focus-unit,
+.cw-battle-donut-label {
+  font-family: var(--font-interface);
+  fill: #fff;
+  paint-order: stroke;
+  stroke: rgba(0, 0, 0, .13);
+  stroke-width: 1.5px;
+  stroke-linejoin: round;
+}
+
+.cw-battle-focus-margin { font-size: 25px; font-weight: 700; }
+.cw-battle-focus-unit { font-size: var(--type-chart-small); font-weight: 400; letter-spacing: .04em; }
+.cw-battle-donut-label-noc { font-size: var(--type-chart-small); font-weight: 700; letter-spacing: .04em; }
+.cw-battle-donut-label-value { font-size: 14px; font-weight: 700; }
+
+@media (prefers-reduced-motion: reduce) {
+  .cw-battle-point,
+  .cw-battle-focus,
+  .cw-battle-x-axis .tick,
+  .cw-battle-boycott-layer .cw-boycott-marker {
+    transition: none !important;
+  }
+}

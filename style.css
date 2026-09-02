@@ -1,0 +1,221 @@
+/* Local, static font assets: safe on GitHub Pages and independent of Google Fonts. */
+@font-face {
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/roboto-slab-v36-latin-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/roboto-slab-v36-latin-700.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/fira-sans-v18-latin-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Fira Sans";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/fira-sans-v18-latin-italic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/fira-sans-v18-latin-700.woff2") format("woff2");
+}
+
+:root {
+  /* Global project theme: shared by every page and visualization. */
+  --ink: #25282a;
+  --muted: #6c757d;
+  --line: #dee2e6;
+  --paper: #ffffff;
+  --page: #f8f9fa;
+  --soft: #f5f6f7;
+  --accent: #315f82;
+
+  /* Secondary page surfaces/text kept here rather than scattered in rules. */
+  --ink-secondary: #4b4f52;
+  --surface-subtle: #fafafa;
+  --surface-hero-end: #fbfbfb;
+  --note-accent: #9c7d23;
+  --note-surface: #fbfaf5;
+  --note-text: #565b60;
+  --footer-text: #5f6469;
+
+  /* Typography triangle: two families, a compact hierarchy, and readable rhythm. */
+  --font-editorial: "Roboto Slab", serif;
+  --font-interface: "Fira Sans", sans-serif;
+  --type-body: 16px;
+  --type-body-leading: 1.72;
+  --type-chart-title: 1.4rem;
+  --type-chart-subtitle: 1rem;
+  --type-axis: 13px;
+  --type-chart-category: 15px;
+  --type-chart-label: 13px;
+  --type-chart-small: 12px;
+  --type-tooltip: 14px;
+  --type-tooltip-title: 15px;
+  --type-reading-measure: 75ch;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-interface);
+  font-size: var(--type-body);
+  font-weight: 400;
+  color: var(--ink);
+  background: var(--page);
+}
+
+h1,
+h2 {
+  font-family: var(--font-editorial);
+  color: var(--ink);
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-interface);
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.project-hero {
+  background: linear-gradient(180deg, var(--paper) 0%, var(--surface-hero-end) 100%);
+}
+
+.hero-rings {
+  width: 92px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.hero-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.hero-subtitle {
+  font-family: var(--font-editorial);
+  font-size: clamp(1.15rem, 2vw, 1.55rem);
+  color: var(--ink-secondary);
+}
+
+.text-container {
+  max-width: var(--type-reading-measure);
+  margin: 0 auto;
+}
+
+.story-section p,
+.methodology-section p,
+.team-section p {
+  line-height: var(--type-body-leading);
+}
+
+.visualization-section {
+  padding: 1.25rem 0 0;
+}
+
+.chart-header {
+  display: block;
+}
+
+.chart-title {
+  font-family: var(--font-editorial);
+  font-weight: 700;
+  font-size: var(--type-chart-title);
+  margin-bottom: 0.25rem;
+  line-height: 1.2;
+}
+
+.chart-subtitle {
+  margin: 0 auto;
+  max-width: var(--type-reading-measure);
+  font-family: var(--font-interface);
+  font-weight: 400;
+  font-style: italic;
+  font-size: var(--type-chart-subtitle);
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.form-range::-webkit-slider-thumb {
+  background: var(--accent);
+}
+
+.form-range::-moz-range-thumb {
+  background: var(--accent);
+}
+
+.method-note {
+  max-width: 86ch;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.75rem 1rem;
+  border-left: 3px solid var(--note-accent);
+  background: var(--note-surface);
+  color: var(--note-text);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.processing-flow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-subtle);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.project-footer {
+  background: var(--surface-subtle);
+  color: var(--footer-text);
+}
+
+.project-footer h2 {
+  font-family: var(--font-interface);
+  font-weight: 700;
+}
+
+
+@media (max-width: 768px) {
+  .chart-title { font-size: 1.25rem; }
+  .chart-subtitle { font-size: 0.9rem; }
+}
+
+@media (max-width: 767.98px) {
+  main {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
