@@ -8,6 +8,7 @@ import {
 import { createLegendFocus } from "../components/legend-focus.js";
 import { renderBoycottMarkers } from "../components/boycott-marker.js";
 import { applyCityYearTicks } from "../utils/olympic-axis.js";
+import { createMultiToggle } from "../components/multi-toggle.js";
 
 const d3 = globalThis.d3;
 const WINNER_ORDER = Object.freeze({ USA: 0, USSR: 1, DRAW: 2 });
@@ -84,7 +85,7 @@ function rivalryTooltipHtml(d) {
 }
 
 export function createRivalryPulse(data, ids) {
-  const state = { type: "all", sport: "all" };
+  const state = { types: new Set(["individual", "team"]), sport: "all" };
   const container = d3.select(`#${ids.containerId}`);
   const tooltip = getColdWarTooltip();
 
@@ -211,16 +212,14 @@ export function createRivalryPulse(data, ids) {
     ],
     targetGroups: [
       {
-        selection: () => dotLayer.selectAll("circle.cw-pulse-dot"),
+        selection: () => dotLayer.selectAll("path.cw-pulse-dot"),
         key: d => d.Winner
       }
     ]
   });
 
   function typeFilteredRows() {
-    return data.filter(
-      d => state.type === "all" || d.EncounterType === state.type
-    );
+    return data.filter(d => state.types.has(d.EncounterType));
   }
 
   function isSelectedSport(d) {
@@ -250,23 +249,22 @@ export function createRivalryPulse(data, ids) {
       .ease(d3.easeCubicOut);
 
     const dots = dotLayer
-      .selectAll("circle.cw-pulse-dot")
+      .selectAll("path.cw-pulse-dot")
       .data(positioned, d => d.EncounterId)
       .join(
         enter =>
           enter
-            .append("circle")
+            .append("path")
             .attr("class", "cw-pulse-dot")
-            .attr("r", 0)
-            .attr("cx", d => x(String(d.Year)))
-            .attr("cy", y(0))
+            .attr("d", d3.symbol().size(0))
+            .attr("transform", d => `translate(${x(String(d.Year))},${y(0)})`)
             .attr("opacity", 0),
         update => update,
         exit =>
           exit
             .transition(transition)
-            .attr("cy", y(0))
-            .attr("r", 0)
+            .attr("transform", d => `translate(${x(String(d.Year))},${y(0)})`)
+            .attr("d", d3.symbol().size(0))
             .attr("opacity", 0)
             .remove()
       )
@@ -280,17 +278,30 @@ export function createRivalryPulse(data, ids) {
         const sportClass = isSelectedSport(d) ? "" : " is-sport-dimmed";
         return `cw-pulse-dot ${outcomeClass}${sportClass}`;
       })
-      .on("mouseover", (event, d) =>
-        showTooltip(tooltip, event, rivalryTooltipHtml(d))
-      )
+      .on("mouseover", (event, d) => {
+        const opacity = isSelectedSport(d) ? 0.7 : 0.126;
+
+        d3.select(event.currentTarget)
+          .attr("fill-opacity", opacity)
+          .attr("stroke-opacity", opacity);
+
+        showTooltip(tooltip, event, rivalryTooltipHtml(d));
+      })
       .on("mousemove", event => moveTooltip(tooltip, event))
-      .on("mouseout", () => hideTooltip(tooltip));
+      .on("mouseout", (event, d) => {
+        const opacity = isSelectedSport(d) ? 1 : 0.18;
+
+        d3.select(event.currentTarget)
+          .attr("fill-opacity", opacity)
+          .attr("stroke-opacity", opacity);
+
+        hideTooltip(tooltip);
+      });
 
     dots
       .transition(transition)
-      .attr("r", 5.8)
-      .attr("cx", d => x(String(d.Year)))
-      .attr("cy", d => y(d.stack))
+      .attr("d", d => d3.symbol().type(d.EncounterType === "team" ? d3.symbolSquare : d3.symbolCircle).size(Math.PI * 5.8 ** 2)())
+      .attr("transform", d => `translate(${x(String(d.Year))},${y(d.stack)})`)
       .attr("opacity", 1)
       // These two opacity channels preserve the existing legend-focus opacity
       // on the whole mark while making unselected sports visibly recede.
@@ -301,9 +312,15 @@ export function createRivalryPulse(data, ids) {
     focusController.refresh();
   }
 
-  document.getElementById(ids.typeSelectId).addEventListener("change", event => {
-    state.type = event.target.value;
-    render();
+  createMultiToggle({
+    containerId: ids.typeToggleId,
+    label: "Encounter type",
+    options: [
+      { value: "individual", label: "Individual", symbol: "circle" },
+      { value: "team", label: "Team", symbol: "square" }
+    ],
+    initialValues: state.types,
+    onChange: values => { state.types = values; render(); }
   });
 
   document.getElementById(ids.sportSelectId).addEventListener("change", event => {

@@ -9,7 +9,7 @@ import {
 const d3 = globalThis.d3;
 
 export function createSportingFronts(data, ids) {
-  const state = { medal: "total", scope: "all_games" };
+  const state = { medal: "total" };
   const tooltip = getColdWarTooltip();
   const container = d3.select(`#${ids.containerId}`);
 
@@ -39,15 +39,13 @@ export function createSportingFronts(data, ids) {
   const annotationLayer = svg.append("g").attr("class", "cw-sf-annotation-layer");
 
   const medalSelect = document.getElementById(ids.medalSelectId);
-  const scopeSelect = document.getElementById(ids.scopeSelectId);
   const aggregateData = data.filter(d => d.Year === "ALL");
 
-  medalSelect.value = state.medal;
-  scopeSelect.value = state.scope;
+  if (medalSelect) medalSelect.value = state.medal;
 
   function visibleRows() {
     return aggregateData
-      .filter(d => d.Scope === state.scope)
+      .filter(d => d.Scope === "all_games")
       .map(d => ({
         ...d,
         diff: state.medal === "gold" ? d.GoldDifference : d.TotalDifference
@@ -207,10 +205,14 @@ export function createSportingFronts(data, ids) {
         return `cw-sf-bar ${directionClass}`;
       })
       .on("mouseover", (event, d) => {
+        d3.select(event.currentTarget).attr("fill-opacity", 0.7);
         showRowTooltip(event, d);
       })
       .on("mousemove", event => moveTooltip(tooltip, event))
-      .on("mouseout", () => hideTooltip(tooltip));
+      .on("mouseout", event => {
+        d3.select(event.currentTarget).attr("fill-opacity", 1);
+        hideTooltip(tooltip);
+      });
 
     bars
       .transition(transition)
@@ -272,16 +274,12 @@ export function createSportingFronts(data, ids) {
       .attr("height", y.bandwidth());
   }
 
-  medalSelect.addEventListener("change", event => {
-    state.medal = event.target.value;
-    render();
-  });
-
-  scopeSelect.addEventListener("change", event => {
-    state.scope = event.target.value;
-    render();
-  });
-
+  if (medalSelect) {
+    medalSelect.addEventListener("change", event => {
+      state.medal = event.target.value;
+      render();
+    });
+  }
 
   render();
 }

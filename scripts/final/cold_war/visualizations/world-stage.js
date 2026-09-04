@@ -14,12 +14,17 @@ const d3 = globalThis.d3;
 /* Animation tuning                                                           */
 /* -------------------------------------------------------------------------- */
 
+export const WORLD_STAGE_COLOR_TRANSITION = Object.freeze({
+  duration: 700,
+  ease: d3.easeCubicInOut
+});
+
 const MAP_ANIMATION = Object.freeze({
-  colorDuration: 700,
+  colorDuration: WORLD_STAGE_COLOR_TRANSITION.duration,
   enterDuration: 250,
   exitDuration: 250,
 
-  colorEase: d3.easeCubicInOut,
+  colorEase: WORLD_STAGE_COLOR_TRANSITION.ease,
   enterEase: d3.easeCubicOut,
   exitEase: d3.easeCubicIn
 });

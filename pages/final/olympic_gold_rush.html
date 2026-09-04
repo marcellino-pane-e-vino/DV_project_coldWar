@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gold Rush — The Olympic Cold War</title>
+  <title>The Olympic Cold War</title>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="../../style.css">
-  <link rel="stylesheet" href="../../cold_war.css?v=3.34.0">
+  <link rel="stylesheet" href="../../cold_war.css?v=3.35.4">
   <link rel="icon" type="image/x-icon" href="../../favicon.ico">
 </head>
 
@@ -25,8 +25,8 @@
       <section id="introduction" class="story-section mt-2 mb-5">
         <div class="text-container">
           <h2 class="fw-bold mb-3">Two superpowers, one global stage</h2>
-          <p>From the Soviet Union's Summer Olympic debut in 1952 to its final Summer Games in 1988, Olympic competition became one of the most visible arenas in which the United States and the USSR measured national prestige. This project connects medal performance, sporting specialization and verified direct encounters with the wider geopolitical context of the Cold War.</p>
-          <p>The primary analytical track below is deliberately Summer-only. Moscow 1980 and Los Angeles 1984 are treated as boycotts and therefore as non-participation, never as zero-performance editions.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer congue, nibh eget efficitur posuere, justo sem consequat massa, sit amet posuere arcu augue at justo.</p>
+          <p>Curabitur at lacus vitae justo posuere congue. Donec non neque eu ipsum ullamcorper pretium, a aliquam lacus sodales.</p>
         </div>
       </section>
 
@@ -43,6 +43,10 @@
               <div id="cw-arms-legend" class="cw-legend-row"></div>
             </div>
             <div id="cw-arms-help" class="chart-help-host"></div>
+            <div class="text-container mt-4">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, purus quis vestibulum congue, metus lectus facilisis nibh, eget consequat lorem arcu vel justo.</p>
+              <p>Praesent vitae nibh sit amet augue interdum tincidunt. Suspendisse potenti; aliquam erat volutpat.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -56,18 +60,20 @@
         <div class="row justify-content-center">
           <div class="col-lg-10">
             <div class="cw-control-row" aria-label="World Stage and Medal Race controls">
-              <div class="cw-control-group">
-                <label for="cw-world-metric">Medal metric</label>
-                <select id="cw-world-metric" class="form-select form-select-sm">
-                  <option value="total">Total medals</option>
-                  <option value="gold">Gold medals</option>
-                </select>
-              </div>
-              <button id="cw-world-play" class="btn btn-outline-secondary btn-sm" type="button"><span id="cw-world-play-text">Play</span></button>
+              <div id="cw-world-metric-toggle"></div>
               <div class="cw-timeline-control">
-                <label for="cw-world-year-slider">Summer Olympic edition</label>
-                <input id="cw-world-year-slider" class="form-range" type="range">
-                <strong id="cw-world-year-label"></strong>
+                <div class="cw-timeline-slider-row">
+                  <button id="cw-world-play" class="btn btn-outline-secondary btn-sm" type="button"><span id="cw-world-play-text">Play</span></button>
+                  <div class="cw-timeline-slider-stack">
+                    <label for="cw-world-year-slider">Summer Olympic edition</label>
+                    <div class="cw-timeline-range-wrap">
+                      <div id="cw-world-year-milestones" class="cw-timeline-milestones" aria-label="Boycott milestones"></div>
+                      <input id="cw-world-year-slider" class="form-range" type="range">
+                      <div id="cw-world-year-thumb" class="cw-timeline-visual-thumb" aria-hidden="true"></div>
+                    </div>
+                    <strong id="cw-world-year-label"></strong>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -99,6 +105,10 @@
                 <span class="cw-medal-legend-item"><span class="cw-medal-legend-marker bronze" aria-hidden="true"></span><span class="cw-medal-legend-text">Bronze</span></span>
               </div>
             </div>
+            <div class="text-container mt-4">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Vivamus posuere nunc sed velit ullamcorper, vel consequat magna ultrices.</p>
+              <p>Morbi sit amet sollicitudin nibh. Donec posuere, lectus sed tincidunt faucibus, odio risus aliquet nunc, sed consequat est risus in justo.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -110,14 +120,17 @@
         </div>
         <div class="row justify-content-center">
           <div class="col-lg-10">
-            <div class="cw-control-row">
-              <div class="cw-control-group"><label for="cw-sf-medal">Medal metric</label><select id="cw-sf-medal" class="form-select form-select-sm"><option value="total">Total medals</option><option value="gold">Gold medals</option></select></div>
-              <div class="cw-control-group"><label for="cw-sf-scope">Competition scope</label><select id="cw-sf-scope" class="form-select form-select-sm"><option value="all_games">All games</option><option value="head_to_head">Head-to-head sports only</option></select></div>
-            </div>
+            <!-- Temporarily disabled: restore this block to re-enable Total/Gold mode.
+            <div class="cw-control-group"><label for="cw-sf-medal">Medal metric</label><select id="cw-sf-medal" class="form-select form-select-sm"><option value="total">Total medals</option><option value="gold">Gold medals</option></select></div>
+            -->
             <div id="cw-sporting-fronts-composite" class="cw-chart-unit">
               <div id="cw-sporting-fronts" class="cw-chart-frame cw-responsive-svg"></div>
             </div>
             <div id="cw-sf-help" class="chart-help-host"></div>
+            <div class="text-container mt-4">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit amet neque non mi luctus sagittis ut vitae mi.</p>
+              <p>Etiam congue, nibh at tincidunt hendrerit, lacus est porta ipsum, at faucibus ligula felis vel arcu.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -129,15 +142,19 @@
         </div>
         <div class="row justify-content-center">
           <div class="col-lg-10">
-            <div class="cw-control-row">
-              <div class="cw-control-group"><label for="cw-pulse-type">Encounter type</label><select id="cw-pulse-type" class="form-select form-select-sm"><option value="all">All</option><option value="team">Team</option><option value="individual">Individuals</option></select></div>
-              <div class="cw-control-group"><label for="cw-pulse-sport">Sport</label><select id="cw-pulse-sport" class="form-select form-select-sm"></select></div>
+            <div class="cw-control-row cw-pulse-control-row">
+              <div class="cw-control-group cw-pulse-type-control"><label for="cw-pulse-type-toggle">Encounter type</label><div id="cw-pulse-type-toggle"></div></div>
+              <div class="cw-control-group cw-pulse-sport-control"><label for="cw-pulse-sport">Sport</label><select id="cw-pulse-sport" class="form-select form-select-sm"></select></div>
             </div>
             <div id="cw-pulse-composite" class="cw-chart-unit">
               <div id="cw-rivalry-pulse" class="cw-chart-frame cw-responsive-svg"></div>
               <div id="cw-pulse-legend" class="cw-legend-row"></div>
             </div>
             <div id="cw-pulse-help" class="chart-help-host"></div>
+            <div class="text-container mt-4">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas congue tellus id sem pretium, nec iaculis massa ultrices.</p>
+              <p>Integer interdum magna vitae ligula consequat, vitae tempor nunc vestibulum. Nam eu fermentum velit.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -149,14 +166,20 @@
         </div>
         <div class="row justify-content-center">
           <div class="col-lg-10">
+            <!-- Temporarily disabled: restore this block to re-enable Total/Gold mode.
             <div class="cw-control-row">
               <div class="cw-control-group"><label for="cw-who-battle-strip-metric">Medal metric</label><select id="cw-who-battle-strip-metric" class="form-select form-select-sm"><option value="total">Total medals</option><option value="gold">Gold medals</option></select></div>
             </div>
+            -->
             <div id="cw-who-battle-strip-composite" class="cw-chart-unit">
               <div id="cw-who-battle-strip" class="cw-chart-frame cw-responsive-svg"></div>
               <div id="cw-who-battle-strip-legend" class="cw-legend-row"></div>
             </div>
             <div id="cw-who-battle-strip-help" class="chart-help-host"></div>
+            <div class="text-container mt-4">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vulputate, nibh vitae fermentum pulvinar, tortor magna lacinia lorem, ut auctor leo ante nec nisi.</p>
+              <p>Donec efficitur sem quis velit luctus, sit amet varius arcu facilisis. Sed feugiat eros vitae eros faucibus, a tempor sapien suscipit.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -165,24 +188,24 @@
         <div class="text-container">
           <h2 class="fw-bold mb-4">Data, processing and limitations</h2>
           <h3 class="h5 mt-4">Data Sources</h3>
-          <p>Olympic medal and participation data are derived from the repository's athlete-level <a href="https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results" target="_blank" rel="noopener">120 years of Olympic history</a> snapshot and its reproducible Summer-only medal preprocessing. Verified USA–USSR direct encounters come from the repository's <a href="https://www.olympedia.org/" target="_blank" rel="noopener">Olympedia</a> scraper/cache pipeline and retain match-level Olympedia URLs and identifiers. Historical sovereign-state geometry is generated from <a href="https://icr.ethz.ch/data/cshapes/" target="_blank" rel="noopener">CShapes 2.0</a> / the Gleditsch–Ward state system. The nuclear stockpile series is a committed <a href="https://ourworldindata.org/grapher/nuclear-warhead-stockpiles" target="_blank" rel="noopener">Our World in Data</a> snapshot based on Federation of American Scientists estimates, containing United States and Russia annual values; for the historical 1945–1991 context, the project explicitly treats the source's Russia series as the USSR series and preserves that provenance in preprocessing.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dignissim libero eu magna ultrices, ut aliquam lacus vulputate.</p>
           <h3 class="h5 mt-4">Data Cleaning and Imputation</h3>
-          <p>The Cold War Olympic scope is Summer Games 1952–1988. Team medals are deduplicated at event/delegation/medal level so a team award counts once rather than once per athlete. Missing medal performance is not imputed. A participating delegation with no medal receives zero medal counts; a boycotting superpower is instead represented as non-participation. World Stage includes participant rows with zero medals where a historical sovereign-state mapping is available.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper, risus vitae mollis eleifend, ante erat posuere magna, non pretium lectus purus eget nunc.</p>
           <h3 class="h5 mt-4">Data Processing and Analysis</h3>
           <div class="processing-flow" aria-label="Data processing flow"><span>Raw data</span><span>→</span><span>Cleaning</span><span>→</span><span>Transformation</span><span>→</span><span>Analysis / metrics</span><span>→</span><span>Visualization-ready data</span><span>→</span><span>D3 visual encoding</span></div>
-          <p class="mt-3">A shared Cold War preprocessing layer produces a canonical intermediate dataset, then one chart-specific notebook generates each runtime CSV. World Stage uses TotalMedalShare = country total medals / all medal awards in that edition and GoldMedalShare = country gold medals / all gold awards in that edition. The color domains are fixed across 1952–1988 separately for the two metrics.</p>
-          <p><strong>Sporting Fronts:</strong> the visualization is cumulative and has no per-edition selector. Moscow 1980 and Los Angeles 1984 are excluded because the analytical question is specialization when both superpowers were present; the cumulative comparison therefore combines 1952, 1956, 1960, 1964, 1968, 1972, 1976 and 1988 only. Its head-to-head scope still measures medal difference, but restricts the cumulative sport comparison to sports supported by verified direct-encounter evidence.</p>
-          <p><strong>Rivalry Pulse:</strong> precision is preferred to recall. Every dot must have reliable match/bout-level evidence of a binary USA–USSR contest. The scraper output preserves source URLs, raw stage labels and defensibly normalized stage labels. Where the validated intermediate data contain numeric scores for both sides, those scores are exposed in the visualization tooltip; non-numeric result methods are not converted into artificial scores. Doubtful or inferred encounters are excluded.</p>
-          <p><strong>Who Won — Battle Strip: Local Ripple:</strong> edition-level medal totals use a square-root margin scale, local-repulsion layout, focus interaction and USA/USSR donut values. The expanded surface uses a dark tint of the edition winner's color; boycott editions remain non-comparable methodological markers.</p>
+          <p class="mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempus lectus vel nisl facilisis, in malesuada erat laoreet.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque efficitur massa non velit tincidunt, id tincidunt tellus tincidunt.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque condimentum nibh vel fermentum commodo.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed augue nec neque maximus auctor at vitae eros.</p>
           <h3 class="h5 mt-4">Limitations</h3>
-          <p>The direct-encounter dataset is intentionally conservative and is limited to the sports currently covered by the validated scraper; additional binary-format disciplines can be added in a later scraper version. Medal-share denominators reflect medal awards represented by the underlying Olympic dataset after team-award deduplication. Historical delegation-to-state mapping excludes non-sovereign/composite delegations where a valid CShapes sovereign geometry is not appropriate. The nuclear Russia→USSR interpretation is a project convention for this source snapshot and is documented rather than silently applied in the frontend.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam erat volutpat. Nulla nec sem vitae ipsum vulputate facilisis.</p>
         </div>
       </section>
 
       <section id="team" class="team-section border-top pt-5 mt-5 mb-4">
         <div class="text-container">
           <h2 class="fw-bold">Roberto Lazzarini</h2>
-          <p>Individual project. Responsibilities include data sourcing, preprocessing, data analysis, visualization design, D3.js development, frontend development, methodology, and documentation.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut sem posuere, interdum nunc sit amet, consectetur dolor.</p>
         </div>
       </section>
     </main>
