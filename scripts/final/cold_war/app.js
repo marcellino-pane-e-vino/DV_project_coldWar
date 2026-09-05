@@ -39,8 +39,9 @@ function initializeHelp() {
     hostId: "cw-arms-help",
     title: "How to read the chart?",
     steps: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere, augue quis placerat auctor, massa sapien gravida velit, vitae tristique lectus nisl sed lacus.",
-      "Donec posuere, magna eu interdum luctus, lectus orci sollicitudin nisl, vitae semper augue purus sed nibh."
+      "Highlight an event by hovering or clicking on it.",
+      "Click on legend items to isolate its relative superpower.",
+      "Hover on the areas to see details. "
     ]
   });
 
@@ -49,8 +50,11 @@ function initializeHelp() {
     hostId: "cw-world-help",
     title: "How to read the chart?",
     steps: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae turpis a sapien posuere porttitor.",
-      "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae."
+      "Map and medal table are connected: hover/click on a country in one and see it highlighted in the other.",
+      "Clicking on a country in the map automatically scroll to the related country in the medal table.",
+      "Select the different medal metrics by clicking the buttons.",
+      "Scroll the year dot to see the medal distribution and medal table relative to that year.",
+      "Press the \"Play\" button to see the evolution of the medal distribution."
     ]
   });
 
@@ -59,8 +63,8 @@ function initializeHelp() {
     hostId: "cw-sf-help",
     title: "How to read the chart?",
     steps: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ut neque ac enim porttitor aliquet.",
-      "Suspendisse tincidunt arcu a nibh sodales, at facilisis nibh dapibus."
+      "Observe the different specializations between Soviet Union and United States.",
+      "Hover on a specific bar to see details."
     ]
   });
 

@@ -28,6 +28,7 @@ const SERIES = Object.freeze([
 const VISIBLE_CALLOUT_IDS = new Set([
   "soviet-atomic-test",
   "hydrogen-bombs",
+  "sputnik",
   "cuban-missile-crisis",
   "salt-i",
   "moscow-boycott",
@@ -58,12 +59,21 @@ const CALLOUTS = Object.freeze([
     anchor: "start"
   },
   {
+    id: "sputnik",
+    year: 1957,
+    lines: ["Launch of", "Sputnik I"],
+    type: "historical",
+    xOffset: 10,
+    yPosition: 0.26,
+    anchor: "start"
+  },
+  {
     id: "cuban-missile-crisis",
-    year: 1963,
+    year: 1962,
     lines: ["Cuban Missile Crisis Leads", "to Test Ban Treaty"],
     type: "historical",
     xOffset: 10,
-    yPosition: 0.18,
+    yPosition: 0.05,
     anchor: "start"
   },
   {
@@ -94,10 +104,10 @@ const CALLOUTS = Object.freeze([
     lines: [
       "Soviet Union boycotts",
       "Los Angeles Olympics",
-      "four years later"
+      "in retaliation"
     ],
     type: "boycott",
-    xOffset: 10,
+    xOffset: -10,
     yPosition: 0.72,
     anchor: "end"
   },
