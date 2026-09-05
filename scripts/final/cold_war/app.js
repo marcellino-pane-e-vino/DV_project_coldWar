@@ -73,8 +73,11 @@ function initializeHelp() {
     hostId: "cw-pulse-help",
     title: "How to read the chart?",
     steps: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean egestas tortor vitae urna sagittis, vel tempus felis faucibus.",
-      "Nam non nunc sit amet lacus posuere placerat. Integer sed varius lectus."
+      "Each dot represent an individual USA-USSR encounter.",
+      "Hover/click on a dot to see details on the encounter.",
+      "Click on the \"Individual\" and \"Team\" buttons above to hide or show the relative encounter category. ",
+      "Select a sport from the drop-down menu to isolate all dots relative to said sport.",
+      "Click on legend items to isolate its relative team.",
     ]
   });
 
@@ -83,8 +86,9 @@ function initializeHelp() {
     hostId: "cw-who-battle-strip-help",
     title: "How to read the chart?",
     steps: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vehicula neque nec nulla consequat, id scelerisque nulla cursus.",
-      "Curabitur facilisis tortor eget ante dignissim, nec pulvinar elit tristique."
+      "Dot size scales with medal lead. The larger the dot, the wider the gap with the other team.",
+      "Hover/click on a dot to see details.",
+      "Click on legend items to isolate its relative team."
     ]
   });
 
