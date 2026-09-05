@@ -1,10 +1,10 @@
-import { CW_DEFAULTS } from "../core/config.js";
 import {
   getColdWarTooltip,
   hideTooltip,
   moveTooltip,
   showTooltip
 } from "../components/tooltip.js";
+import { CW_DEFAULTS } from "../core/config.js";
 
 const d3 = globalThis.d3;
 
@@ -162,7 +162,7 @@ export function createSportingFronts(data, ids) {
       .attr("x", margin.left)
       .attr("y", 28)
       .attr("text-anchor", "start")
-      .text("← Soviet advantage");
+      .text("← Soviet advantage (Total medals)");
 
     annotationLayer
       .selectAll("text.cw-sf-usa-advantage")
@@ -172,7 +172,7 @@ export function createSportingFronts(data, ids) {
       .attr("x", width - margin.right)
       .attr("y", 28)
       .attr("text-anchor", "end")
-      .text("American advantage →");
+      .text("American advantage (Total medals) →");
 
     const bars = barLayer
       .selectAll("rect.cw-sf-bar")
