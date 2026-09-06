@@ -88,8 +88,8 @@
   --cw-arms-opacity-focus: 0;
   --cw-arms-opacity-dim: 0;
   --cw-arms-line-opacity-dim: 0.28;
-  --cw-arms-line-width: 2.1;
-  --cw-arms-line-width-pinned: 3;
+  --cw-arms-line-width: 4;
+  --cw-arms-line-width-pinned: 4;
   --cw-arms-focus-transition: 260ms;
 
   --cw-pulse-dot-stroke-width: 1;
