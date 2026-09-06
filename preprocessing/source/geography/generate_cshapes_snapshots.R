@@ -1,13 +1,16 @@
 #!/usr/bin/env Rscript
 
-# Rebuild the historical sovereign-state basemaps used by the project and emit
-# a lightweight state-name/Gleditsch-Ward reference for auditing the Olympic
-# geography crosswalk.
+# Purpose of this file: Creates the historical country maps used by the project.
 #
-# Canonical source: the pinned local CShapes 2.0 CRAN package archive. The
-# Python crosswalk builder reads this same archive directly.
-# Snapshot convention: July 1 of each Summer Olympic year. This agrees with the
-# Python crosswalk builder and avoids a pre-transition 1964 snapshot.
+# It also generates a small reference file containing country names and
+# Gleditsch-Ward codes, used to check the Olympic geography mapping.
+#
+# Both this script and the Python geography builder use the same local
+# CShapes 2.0 archive as their source.
+#
+# For each Summer Olympic edition, countries are represented as they existed
+# on 1 July of that year. Using the same date in both scripts keeps the maps
+# and the Olympic-country mapping consistent.
 
 OLYMPIC_YEARS <- c(
   1896, 1900, 1904, 1906, 1908, 1912, 1920, 1924, 1928, 1932,
@@ -72,7 +75,7 @@ for (year in OLYMPIC_YEARS) {
   )
   snapshot <- st_as_sf(snapshot)
 
-  # Keep a human-readable reference for the crosswalk audit before reducing the
+  # Keep a human-readable reference for the GW-NOC mapping before reducing the
   # runtime geometry to its minimal GW identifier.  CShapes 2.0 currently
   # exposes `country_name`; `statename` is accepted only as a compatibility
   # fallback for older/local package builds.

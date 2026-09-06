@@ -1,18 +1,10 @@
-"""Shared preprocessing primitives for the Cold War analytical views.
-
-This module deliberately contains only logic reused by multiple chart notebooks.
-The notebooks in this directory are the official chart-specific build pipelines.
-
-Geographic identity is never inferred from IOC/NOC codes or ISO codes here.
-Every Olympic delegation is resolved through the explicit, audited crosswalk at
-``preprocessing/source/geography/olympic_geography_mapping.csv``.
-"""
+#Logic reused by all final chart notebooks.
 from __future__ import annotations
 
-from collections import defaultdict
-from pathlib import Path
 import json
 import shutil
+from collections import defaultdict
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
@@ -54,7 +46,6 @@ def join_unique(values) -> str:
 
 
 def load_olympic_source() -> pd.DataFrame:
-    """Load the canonical Olympic source and restrict it to the Cold War scope."""
     if not OLYMPIC_SOURCE.exists():
         raise FileNotFoundError(f"Missing canonical Olympic source: {OLYMPIC_SOURCE}")
     raw = pd.read_csv(OLYMPIC_SOURCE, delimiter=";", low_memory=False)
@@ -137,12 +128,12 @@ def participant_rows(raw: pd.DataFrame | None = None) -> pd.DataFrame:
 
 def load_geography_mapping() -> pd.DataFrame:
     if not GEOGRAPHY_MAPPING.exists():
-        raise FileNotFoundError(f"Missing explicit Olympic/CShapes crosswalk: {GEOGRAPHY_MAPPING}")
+        raise FileNotFoundError(f"Missing explicit Olympic/CShapes mapping: {GEOGRAPHY_MAPPING}")
     mapping = pd.read_csv(GEOGRAPHY_MAPPING, dtype={"NOC": str, "GwCodes": str})
     required = {"NOC", "StartYear", "EndYear", "Country", "GwCodes", "Status", "Reason"}
     missing = required - set(mapping.columns)
     if missing:
-        raise ValueError(f"Geography crosswalk missing columns: {sorted(missing)}")
+        raise ValueError(f"Geography mapping missing columns: {sorted(missing)}")
     mapping["StartYear"] = mapping["StartYear"].astype(int)
     mapping["EndYear"] = mapping["EndYear"].astype(int)
     mapping["GwCodes"] = mapping["GwCodes"].fillna("")
@@ -151,7 +142,7 @@ def load_geography_mapping() -> pd.DataFrame:
 
 
 def resolve_geography(noc: str, year: int, mapping: pd.DataFrame | None = None) -> dict[str, str]:
-    """Resolve one NOC/year through the explicit crosswalk; never guess."""
+    """Resolve one NOC/year through the explicit mapping; never guess."""
     if mapping is None:
         mapping = load_geography_mapping()
     match = mapping[
@@ -249,7 +240,6 @@ def build_common() -> pd.DataFrame:
     common["ParticipationStatus"] = "participated"
     common["BoycottBy"] = ""
 
-    # Add the two historically documented boycott rows as deliberate DNP states.
     city_by_year = {year: join_unique(raw.loc[raw["Year"].eq(year), "City"]) for year in RIVALRY_YEARS}
     extras: list[dict] = []
     for year, noc in BOYCOTTS.items():
@@ -296,11 +286,6 @@ def load_common(rebuild: bool = False) -> pd.DataFrame:
 
 
 def refresh_rivalry_intermediate() -> Path:
-    """Refresh the offline Rivalry Pulse intermediate from the validated scraper output.
-
-    No network request occurs here.  Live Olympedia acquisition remains an explicit
-    source-side operation under preprocessing/source/olympedia/.
-    """
     ensure_output_dirs()
     if not OLYMPEDIA_MATCH_SOURCE.exists():
         if not RIVALRY_INTERMEDIATE.exists():

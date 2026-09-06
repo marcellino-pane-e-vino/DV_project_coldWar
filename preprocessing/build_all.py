@@ -50,9 +50,8 @@ def run_validator(path: Path, *args: str) -> None:
 def main() -> None:
     print("Cold War data build")
 
-    # This reconstructs the mapping in a temporary directory and compares its
-    # bytes with the committed artifact. It never rewrites the mapping used by
-    # the downstream chart build.
+    # Check that the geography mapping can still be recreated from the source files.
+    # The check does not modify the mapping currently used by the chart build.
     print("[geography] verifying generated Olympic/CShapes mapping")
     run_validator(
         PRE / "source" / "geography" / "build_olympic_geography_mapping.py",

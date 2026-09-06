@@ -1,6 +1,4 @@
-#!/usr/bin/env python3
-"""Download and verify the pinned third-party inputs for the geography build."""
-
+#Download and verify the third-party inputs for the geography build.
 from __future__ import annotations
 
 import argparse
@@ -11,11 +9,11 @@ import tempfile
 from pathlib import Path
 from urllib.request import Request, urlopen
 
-HERE = Path(__file__).resolve().parent
-MANIFEST_PATH = HERE / "source_manifest.json"
-DEFAULT_DESTINATION = HERE / "external_sources"
+THIS_FOLDER = Path(__file__).resolve().parent
+MANIFEST_PATH = THIS_FOLDER / "source_manifest.json"
+DEFAULT_DESTINATION = THIS_FOLDER / "external_sources"
 
-
+# needed to perform security checks on the downloaded file (the checksum are in MANIFEST_PATH)
 def sha256(path: Path) -> str:
     digest = hashlib.sha256()
     with path.open("rb") as handle:

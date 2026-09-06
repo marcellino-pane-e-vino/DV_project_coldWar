@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
+
 """Selective Olympedia scraper for USA-USSR Olympic head-to-head encounters.
 
 The tool intentionally separates acquisition from parsing:
 
   local CSV -> candidate result IDs -> cached Olympedia HTML -> offline parse -> validation report
 
-It is designed for the Summer Olympics, 1952-1988, and only for sport families
-where a literal binary encounter can occur. It never infers a direct encounter merely
-because USA and URS appear in the same event.
+It is designed to gather records that respect the following criteria:
+- Summer Olympics only
+- Edition between 1952 and 1988
+- Only data regarding sport families where a literal binary encounter can occur.
 """
 
 from __future__ import annotations

@@ -136,9 +136,6 @@
         </div>
         <div class="row justify-content-center">
           <div class="col-lg-10">
-            <!-- Temporarily disabled: restore this block to re-enable Total/Gold mode.
-            <div class="cw-control-group"><label for="cw-sf-medal">Medal metric</label><select id="cw-sf-medal" class="form-select form-select-sm"><option value="total">Total medals</option><option value="gold">Gold medals</option></select></div>
-            -->
             <div id="cw-sporting-fronts-composite" class="cw-chart-unit">
               <div id="cw-sporting-fronts" class="cw-chart-frame cw-responsive-svg"></div>
             </div>
@@ -157,7 +154,7 @@
       <section id="cw-pulse-section" class="visualization-section cw-section mb-5">
         <div class="chart-header text-center mb-4">
           <h3 class="chart-title">Direct USA-USSR Olympic Encounters</h3>
-          <p class="chart-subtitle">Verified direct USA–USSR Olympic encounters by Summer edition, sport and encounter type from 1952 to 1988.</p>
+          <p class="chart-subtitle">Verified direct USA-USSR Olympic encounters by Summer edition, sport and encounter type from 1952 to 1988.</p>
         </div>
         <div class="row justify-content-center">
           <div class="col-lg-10">
@@ -208,7 +205,7 @@
             <p>All browser-ready datasets are generated from committed source material in the repository.</p>
             <ul>
               <li>Olympic results were drawn from the public <a href="https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results" target="_blank" rel="noopener noreferrer">120 Years of Olympic History</a> dataset and limited to Summer Games held between 1952 and 1988. The dataset provides athlete-level records, including year, city, sport, event, NOC and medal.</li>
-              <li>To move beyond medal tables and examine direct USA–USSR contests, the project derives a purpose-built dataset by scraping and processing publicly available <a href="https://www.olympedia.org/" target="_blank" rel="noopener noreferrer">Olympedia</a> result pages.</li>
+              <li>To move beyond medal tables and examine direct USA-USSR contests, the project derives a purpose-built dataset by scraping and processing publicly available <a href="https://www.olympedia.org/" target="_blank" rel="noopener noreferrer">Olympedia</a> result pages.</li>
               <li>The historical-context chart uses nuclear-warhead estimates from <a href="https://ourworldindata.org/grapher/nuclear-warhead-stockpiles-lines" target="_blank" rel="noopener noreferrer">Our World in Data</a>.</li>
               <li>The map uses a custom-made historical-geography dataset generated from <a href="https://icr.ethz.ch/data/cshapes/" target="_blank" rel="noopener noreferrer">CShapes 2.0</a>. The preprocessing pipeline links Olympic delegations to the appropriate state boundaries for each Olympic edition.</li>
             </ul>
@@ -248,12 +245,15 @@
           <h2 class="h5">Author</h2>
           <p class="mb-0">Roberto Lazzarini (4937188)</p>
         </div>
-        <div class="col-md-4">
-          <h2 class="h5">Sources</h2>
-          <p class="mb-0"><a href="https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results" target="_blank" rel="noopener noreferrer">120 years of Olympic history</a> (Kaggle)</p>
-          <p class="mb-0"><a href="https://www.olympedia.org/" target="_blank" rel="noopener noreferrer">Olympedia</a> (© OlyMADMen 2006–2026)</p>
-          <p class="mb-0"><a href="https://ourworldindata.org/grapher/nuclear-warhead-stockpiles-lines" target="_blank" rel="noopener noreferrer">Estimated nuclear stockpiles</a> (Our World In Data)</p>
-        </div>
+          <div class="col-md-4">
+            <h2 class="h5">Sources</h2>
+            <p class="mb-0"><a href="https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results" target="_blank" rel="noopener noreferrer">120 years of Olympic history</a> (Kaggle)</p>
+            <p class="mb-0"><a href="https://www.olympedia.org/" target="_blank" rel="noopener noreferrer">Olympedia</a> (© OlyMADMen 2006–2026)</p>
+            <p class="mb-0"><a href="https://icr.ethz.ch/data/cshapes/" target="_blank" rel="noopener noreferrer">CShapes 2.0 historical borders</a> (ETH Zürich)</p>
+            <p class="mb-0"><a href="https://github.com/vincentarelbundock/countrycode" target="_blank" rel="noopener noreferrer">countrycode</a> (country-name and code dictionary)</p>
+            <p class="mb-0"><a href="https://github.com/mledoze/countries" target="_blank" rel="noopener noreferrer">countries</a> (country-status data)</p>
+            <p class="mb-0"><a href="https://ourworldindata.org/grapher/nuclear-warhead-stockpiles-lines" target="_blank" rel="noopener noreferrer">Estimated nuclear stockpiles</a> (Our World in Data)</p>
+          </div>
       </div>
       <div class="d-flex flex-wrap justify-content-between gap-3 border-top mt-4 pt-3 small text-muted">
         <a href="#" class="link-secondary">Back to top</a>

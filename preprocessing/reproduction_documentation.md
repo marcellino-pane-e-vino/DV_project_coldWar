@@ -46,7 +46,7 @@ Download the following files and retain the indicated filenames. The geographica
 
 |Destination file|Public dataset|Role in the project|
 |-|-|-|
-|`preprocessing/source/olympics/120\\\\\\\\\\\\\\\_years\\\\\\\\\\\\\\\_of\\\\\\\\\\\\\\\_olympic\\\\\\\\\\\\\\\_history\\\\\\\\\\\\\\\_OG.csv`|[120 Years of Olympic History: Athletes and Results](https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results)|Supplies the Summer Olympic `NOC × edition` participation universe, delegation labels, sports, events and medal records. For the geography crosswalk, only participation years and delegation labels are used.|
+|`preprocessing/source/olympics/120\\\\\\\\\\\\\\\_years\\\\\\\\\\\\\\\_of\\\\\\\\\\\\\\\_olympic\\\\\\\\\\\\\\\_history\\\\\\\\\\\\\\\_OG.csv`|[120 Years of Olympic History: Athletes and Results](https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results)|Supplies the Summer Olympic `NOC × edition` participation universe, delegation labels, sports, events and medal records. For the geography mapping, only participation years and delegation labels are used.|
 |`preprocessing/source/olympics/Olympic\\\\\\\\\\\\\\\_Athlete\\\\\\\\\\\\\\\_Event\\\\\\\\\\\\\\\_Results.csv`|[Joseph Chang's Olympedia scraping project](https://github.com/josephwccheng/olympedia_web_scraping/blob/main/data/Olympic_Athlete_Event_Results.csv)|Supplies athlete/event records and Olympedia `result\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\_id` values used to identify candidate direct encounters.|
 |`preprocessing/source/nuclear/nuclear-warhead-stockpiles-lines.csv`|[Our World in Data: nuclear warhead stockpiles](https://ourworldindata.org/grapher/nuclear-warhead-stockpiles-lines)|Supplies annual US and Soviet/Russian warhead estimates for the Arms Race chart.|
 |`preprocessing/source/geography/external\\\\\\\\\\\\\\\_sources/cshapes\\\\\\\\\\\\\\\_2.0.tar.gz`|[CShapes 2.0](https://icr.ethz.ch/data/cshapes/), distributed through the [official CRAN package](https://cran.r-project.org/package=cshapes)|Supplies dated historical state entities and Gleditsch-Ward codes. The pipeline selects entities active on 1 July of each Olympic year.|
@@ -132,7 +132,7 @@ This writes the runtime final maps accessed at runtime, one for each year:
 
 ## 6\. Rebuild the Olympedia direct-encounter dataset
 
-This section reconstructs the direct USA–USSR encounter dataset from public Olympedia result pages.
+This section reconstructs the direct USA-USSR encounter dataset from public Olympedia result pages.
 
 
 
@@ -205,7 +205,7 @@ rivalry\_pulse\_candidates.csv contains one candidate Olympedia result page per 
 
 
 
-rivalry\_pulse\_matches.csv contains the parsed and validated literal USA–USSR pairings extracted from the candidate pages.
+rivalry\_pulse\_matches.csv contains the parsed and validated literal USA-USSR pairings extracted from the candidate pages.
 
 
 
