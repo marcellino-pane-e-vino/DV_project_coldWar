@@ -1,14 +1,14 @@
-import { COLD_WAR_EDITIONS, CW_DEFAULTS } from "../core/config.js";
+import { renderBoycottMarkers } from "../components/boycott-marker.js";
+import { createLegendFocus } from "../components/legend-focus.js";
+import { createMultiToggle } from "../components/multi-toggle.js";
 import {
   getColdWarTooltip,
   hideTooltip,
   moveTooltip,
   showTooltip
 } from "../components/tooltip.js";
-import { createLegendFocus } from "../components/legend-focus.js";
-import { renderBoycottMarkers } from "../components/boycott-marker.js";
+import { COLD_WAR_EDITIONS, CW_DEFAULTS } from "../core/config.js";
 import { applyCityYearTicks } from "../utils/olympic-axis.js";
-import { createMultiToggle } from "../components/multi-toggle.js";
 
 const d3 = globalThis.d3;
 const WINNER_ORDER = Object.freeze({ USA: 0, USSR: 1, DRAW: 2 });
@@ -227,9 +227,6 @@ export function createRivalryPulse(data, ids) {
   }
 
   function positionedRows() {
-    // Keep every encounter matching the encounter-type filter in the layout.
-    // The sport menu is a focus control: it fades unrelated dots instead of
-    // removing them, preserving the full edition-by-edition context.
     const groups = d3.group(typeFilteredRows(), d => d.Year);
     const positioned = [];
 
@@ -303,12 +300,8 @@ export function createRivalryPulse(data, ids) {
       .attr("d", d => d3.symbol().type(d.EncounterType === "team" ? d3.symbolSquare : d3.symbolCircle).size(Math.PI * 5.8 ** 2)())
       .attr("transform", d => `translate(${x(String(d.Year))},${y(d.stack)})`)
       .attr("opacity", 1)
-      // These two opacity channels preserve the existing legend-focus opacity
-      // on the whole mark while making unselected sports visibly recede.
       .attr("fill-opacity", d => (isSelectedSport(d) ? 1 : 0.18))
       .attr("stroke-opacity", d => (isSelectedSport(d) ? 1 : 0.18));
-
-    // Refresh immediately too, so focus remains coherent during layout updates.
     focusController.refresh();
   }
 

@@ -1,18 +1,16 @@
-import { CW_THEME } from "../core/theme.js";
-import { getGwCode, loadColdWarBasemap } from "../core/geography.js";
 import {
   getColdWarTooltip,
   hideTooltip,
   moveTooltip,
   showTooltip
 } from "../components/tooltip.js";
+import { getGwCode, loadColdWarBasemap } from "../core/geography.js";
+import { CW_THEME } from "../core/theme.js";
 
 const d3 = globalThis.d3;
 
 
-/* -------------------------------------------------------------------------- */
-/* Animation tuning                                                           */
-/* -------------------------------------------------------------------------- */
+/* Animation tuning   */
 
 export const WORLD_STAGE_COLOR_TRANSITION = Object.freeze({
   duration: 700,
@@ -36,18 +34,13 @@ const INITIAL_POSITION = Object.freeze({
 });
 
 // Hard pan boundary around the map canvas.
-// 0 = strict boundary; increase slightly (for example 20 or 40) if you want
-// a small amount of extra breathing room beyond the viewport.
 const PAN_BOUNDARY_PADDING = -10;
-
-
 
 export function createWorldStageMap(data, ids, callbacks = {}) {
   const containerNode = document.getElementById(ids.containerId);
   if (!containerNode) {
     throw new Error(`World Stage map host not found: ${ids.containerId}`);
   }
-
   const container = d3.select(containerNode);
   const tooltip = getColdWarTooltip();
   const gradientPrefix = String(ids.instanceKey || ids.containerId).replace(/[^a-zA-Z0-9_-]/g, "-");
@@ -62,7 +55,6 @@ export function createWorldStageMap(data, ids, callbacks = {}) {
   }
 
   measure();
-
   const svg = container
     .append("svg")
     .attr("viewBox", `0 0 ${width} ${height}`)
@@ -73,31 +65,20 @@ export function createWorldStageMap(data, ids, callbacks = {}) {
     );
 
 
-  /* ------------------------------------------------------------------------ */
-  /* Persistent layers                                                        */
-  /* ------------------------------------------------------------------------ */
+  /* Persistent layers     */
 
   const mapRoot = svg
     .append("g")
     .attr("class", "cw-world-map-root");
-
-  /*
-   * One persistent layer for every historical edition.
-   *
-   * Countries are keyed by GW code and reused whenever possible.
-   */
   const countryLayer = mapRoot
     .append("g")
     .attr("class", "cw-world-country-layer");
-
   const legendRoot = svg
     .append("g")
     .attr("class", "cw-world-legend");
 
 
-  /* ------------------------------------------------------------------------ */
-  /* Zoom                                                                     */
-  /* ------------------------------------------------------------------------ */
+  /* Zoom   */
 
   function viewportExtent() {
     return [
@@ -144,11 +125,6 @@ export function createWorldStageMap(data, ids, callbacks = {}) {
       );
     });
 
-  /*
-   * zoom.transform(...) does not itself guarantee that an arbitrary supplied
-   * transform respects translateExtent. Use D3's own constrain function before
-   * applying programmatic transforms such as the initial view and reset.
-   */
   function constrainZoomTransform(transform) {
     return zoom.constrain()(
       transform,
@@ -202,8 +178,7 @@ export function createWorldStageMap(data, ids, callbacks = {}) {
     .call(zoom)
     .on("dblclick.zoom", null);
 
-  // Start from the configured camera, already constrained by the same hard
-  // boundary used for mouse/touch panning.
+  // Starting camera configuration
   applyZoomTransform(
     initialZoomTransform()
   );
@@ -242,9 +217,7 @@ export function createWorldStageMap(data, ids, callbacks = {}) {
     });
 
 
-  /* ------------------------------------------------------------------------ */
-  /* Fixed medal-share domains                                                */
-  /* ------------------------------------------------------------------------ */
+  /* Fixed medal-share domains                                           */
 
   const maxByMetric = {
     total:
@@ -261,21 +234,8 @@ export function createWorldStageMap(data, ids, callbacks = {}) {
   };
 
 
-  /*
-   * Stops older asynchronous basemap requests from overwriting a newer
-   * requested edition.
-   */
+
   let renderVersion = 0;
-
-
-  /*
-   * IMPORTANT:
-   *
-   * The projection is created only once.
-   *
-   * This prevents tiny global shifts / rescaling of the entire map when
-   * switching between historical CShapes snapshots.
-   */
   let projection = null;
   let projectionReference = null;
   let projectionSizeKey = "";
@@ -283,9 +243,7 @@ export function createWorldStageMap(data, ids, callbacks = {}) {
   let resizeFrame = null;
 
 
-  /* ------------------------------------------------------------------------ */
-  /* Data helpers                                                             */
-  /* ------------------------------------------------------------------------ */
+  /* Data helpers */
 
   function rowIndex(year) {
     const rows =
@@ -364,9 +322,7 @@ export function createWorldStageMap(data, ids, callbacks = {}) {
   }
 
 
-  /* ------------------------------------------------------------------------ */
-  /* Legend                                                                   */
-  /* ------------------------------------------------------------------------ */
+  /* Legend */
 
   function drawLegend(
     metric,
@@ -440,7 +396,7 @@ export function createWorldStageMap(data, ids, callbacks = {}) {
       .text(
         metric === "gold"
           ? "Gold medal share"
-          : "Medal share"
+          : "Total medal share"
       );
 
     legendRoot
@@ -497,8 +453,7 @@ export function createWorldStageMap(data, ids, callbacks = {}) {
           )
       );
 
-    // Boycotts use the exact same neutral fill as any other no-medal
-    // delegation. The dashed outline is a non-color-only status encoding.
+    // Boycotts use the exact same neutral fill as any other no-medal delegation.
     const statusLegend = legendRoot
       .append("g")
       .attr("class", "cw-map-status-legend")
@@ -511,16 +466,16 @@ export function createWorldStageMap(data, ids, callbacks = {}) {
       .attr("width", 15)
       .attr("height", 10)
       .attr("rx", 1.5)
-      .attr("class", "cw-map-status-swatch");
+      .attr("class", "cw-map-status-swatch is-non-participant");
 
     statusLegend
       .append("text")
       .attr("x", 21)
       .attr("y", 0)
       .attr("class", "cw-map-status-label")
-      .text("No medals");
+      .text("Did not participate");
 
-    const boycottX = width < 520 ? 85 : 100;
+    const boycottX = width < 520 ? 140 : 165;
 
     statusLegend
       .append("rect")
@@ -540,25 +495,20 @@ export function createWorldStageMap(data, ids, callbacks = {}) {
   }
 
 
-  /* ------------------------------------------------------------------------ */
-  /* Render                                                                   */
-  /* ------------------------------------------------------------------------ */
+  /* Render */
 
   async function render(state) {
     lastState = { ...state };
     measure();
     svg.attr("viewBox", `0 0 ${width} ${height}`);
 
-    // Width/height may have changed because the coordinated layout is
-    // responsive. Keep D3's viewport and translation limits synchronized with
-    // the current SVG dimensions, then clamp the existing camera if needed.
+    // Keep D3's viewport and translation limits synchronized with the current SVG dimensions and resize the camera
     refreshZoomBoundary();
 
     const version =
       ++renderVersion;
 
-    // A tooltip belongs to the previously rendered/hovered geography. Clear it
-    // before changing edition so stale content can never survive a map update.
+    // clean tooltips related to previously rendered/hovered geography before moving to a new geography
     hideTooltip(tooltip);
     callbacks.onHover?.(null);
 
@@ -568,9 +518,7 @@ export function createWorldStageMap(data, ids, callbacks = {}) {
       );
 
 
-    /*
-     * Ignore stale requests.
-     */
+    // Ignore stale requests.
     if (
       version !==
       renderVersion
@@ -591,9 +539,9 @@ export function createWorldStageMap(data, ids, callbacks = {}) {
       );
 
 
-    /* ---------------------------------------------------------------------- */
-    /* Projection                                                             */
-    /* ---------------------------------------------------------------------- */
+    
+    /* Projection     */
+    
 
     const fc = {
       type:
@@ -603,14 +551,7 @@ export function createWorldStageMap(data, ids, callbacks = {}) {
     };
 
 
-    /*
-     * Create the projection only on the first render.
-     *
-     * Every later edition uses exactly the same projection.
-     *
-     * This means historical boundaries can change without causing the whole
-     * world map to slightly resize or translate between frames.
-     */
+    // Create the projection only on the first render, let editions displayed later use the samme projection. This helps with the mitigation of jittering of moving historical borders
     if (!projectionReference) {
       projectionReference = fc;
     }
@@ -625,17 +566,9 @@ export function createWorldStageMap(data, ids, callbacks = {}) {
           .geoNaturalEarth1()
           .fitExtent(
             [
-              [
-                18,
-                18
-              ],
-
-              [
-                width - 18,
-                height - bottomReserve
-              ]
+              [18,18],
+              [width - 18,height - bottomReserve]
             ],
-
             projectionReference
           );
 
@@ -649,9 +582,9 @@ export function createWorldStageMap(data, ids, callbacks = {}) {
       );
 
 
-    /* ---------------------------------------------------------------------- */
-    /* Target appearance                                                      */
-    /* ---------------------------------------------------------------------- */
+    
+    /* Target appearance   */
+    
 
     function targetFill(feature) {
       const row =
@@ -689,9 +622,9 @@ export function createWorldStageMap(data, ids, callbacks = {}) {
 
 
 
-    /* ---------------------------------------------------------------------- */
-    /* Persistent keyed data join                                             */
-    /* ---------------------------------------------------------------------- */
+    
+    /* Persistent keyed data join                                        */
+    
 
     const countries =
       countryLayer
@@ -704,16 +637,8 @@ export function createWorldStageMap(data, ids, callbacks = {}) {
         );
 
 
-    /* ---------------------------------------------------------------------- */
-    /* EXIT                                                                   */
-    /* ---------------------------------------------------------------------- */
-
-    /*
-     * Only states that actually disappear from the historical snapshot fade
-     * out.
-     *
-     * The whole map never fades.
-     */
+    
+    /* EXIT */
     const exiting =
       countries.exit();
 
@@ -735,9 +660,9 @@ export function createWorldStageMap(data, ids, callbacks = {}) {
       .remove();
 
 
-    /* ---------------------------------------------------------------------- */
-    /* ENTER                                                                  */
-    /* ---------------------------------------------------------------------- */
+    
+    /* ENTER */
+    
 
     const entered =
       countries
@@ -769,22 +694,11 @@ export function createWorldStageMap(data, ids, callbacks = {}) {
               : "false"
         )
 
-        /*
-         * IMPORTANT:
-         *
-         * New state geometry is immediately correct.
-         *
-         * There is NO geographic morph.
-         */
         .attr(
           "d",
           path
         )
 
-        /*
-         * New entities already have their destination color and simply fade
-         * into view.
-         */
         .attr(
           "fill",
           targetFill
@@ -801,46 +715,25 @@ export function createWorldStageMap(data, ids, callbacks = {}) {
           "is-hovered",
           f => byGw.get(getGwCode(f))?.NOC === state.hoveredNoc
         )
-
-        .attr(
-          "opacity",
-          0
-        );
+        .attr("opacity",0);
 
 
-    /* ---------------------------------------------------------------------- */
-    /* UPDATE + ENTER                                                         */
-    /* ---------------------------------------------------------------------- */
+    
+    /* UPDATE + ENTER */
+    
 
-    const merged =
-      entered.merge(
-        countries
-      );
+    const merged =entered.merge(countries);
 
 
-    /*
-     * Cancel a previous color animation if the user / autoplay changes
-     * edition again before it finishes.
-     */
-    merged
-      .interrupt("color");
+    //Cancel a previous color animation if the user / autoplay changes edition again before it finishes.
+    merged.interrupt("color");
 
 
-    /*
-     * Existing countries should never remain partially transparent because
-     * of an interrupted previous enter animation.
-     */
-    countries
-      .interrupt("enter")
-      .attr(
-        "opacity",
-        1
-      );
+    //Existing countries should never remain partially transparent because of an interrupted previous enter animation.
+    countries.interrupt("enter").attr("opacity",1);
 
 
-    /*
-     * Update current edition metadata.
-     */
+    /*  Update current edition metadata.*/
     merged
       .attr(
         "data-noc",
@@ -879,55 +772,20 @@ export function createWorldStageMap(data, ids, callbacks = {}) {
       );
 
 
-    /* ---------------------------------------------------------------------- */
-    /* GEOGRAPHY SNAP                                                         */
-    /* ---------------------------------------------------------------------- */
+    
+    /* HANDLING CHANGES IN HISTORICAL GEOGRAPHY */
+    
 
-    /*
-     * This is the core methodological change.
-     *
-     * Historical geography is discrete.
-     *
-     * We therefore immediately apply the new historically correct shape.
-     *
-     * No SVG-path interpolation:
-     *
-     *   NO old shape ---> distorted intermediate shape ---> new shape
-     *
-     * Instead:
-     *
-     *   old historical shape
-     *            |
-     *            | instant update
-     *            v
-     *   new historical shape
-     */
-    merged
-      .attr(
-        "d",
-        path
-      );
+    merged.attr("d",path);
 
-
-
-    /* ---------------------------------------------------------------------- */
-    /* Events                                                                 */
-    /* ---------------------------------------------------------------------- */
-
-    merged
-      .on(
+    merged.on(
         "mouseover",
         (event, f) => {
           const row =
             byGw.get(
               getGwCode(f)
             );
-
           if (!row) {
-            // The polygon exists in the historical basemap, but there is no
-            // Olympic delegation row for the selected edition. Do not leave
-            // the previous country's tooltip visible while the pointer moves
-            // across this non-participating state.
             hideTooltip(tooltip);
             callbacks.onHover?.(null);
             return;
@@ -936,11 +794,7 @@ export function createWorldStageMap(data, ids, callbacks = {}) {
           callbacks
             .onHover
             ?.(row.NOC);
-
-
           let detail;
-
-
           if (
             row.ParticipationStatus ===
             "boycott"
@@ -956,7 +810,6 @@ export function createWorldStageMap(data, ids, callbacks = {}) {
             detail =
               "No medals";
           }
-
           else {
             detail =
               `${medalValue(
@@ -1004,9 +857,7 @@ export function createWorldStageMap(data, ids, callbacks = {}) {
       .on(
         "mousemove",
         (event, f) => {
-          // Only move a tooltip when this polygon has an Olympic row in the
-          // selected edition. Otherwise a tooltip opened on another country
-          // would appear to "follow" the pointer onto a non-participant.
+          // tooltip removal
           const row =
             byGw.get(
               getGwCode(f)
@@ -1054,23 +905,8 @@ export function createWorldStageMap(data, ids, callbacks = {}) {
       );
 
 
-    /* ---------------------------------------------------------------------- */
-    /* COLOR TRANSITION                                                       */
-    /* ---------------------------------------------------------------------- */
-
-    /*
-     * ONLY the data encoding is animated.
-     *
-     * Existing countries smoothly move from:
-     *
-     *   old medal-share color
-     *
-     * to:
-     *
-     *   new medal-share color
-     *
-     * Geography is already correct before this transition starts.
-     */
+    
+    /* COLOR TRANSITION    */
     merged
       .transition(
         "color"
@@ -1087,16 +923,8 @@ export function createWorldStageMap(data, ids, callbacks = {}) {
       );
 
 
-    /* ---------------------------------------------------------------------- */
-    /* ENTER FADE                                                             */
-    /* ---------------------------------------------------------------------- */
-
-    /*
-     * Countries / states appearing for the first time have no meaningful
-     * previous shape.
-     *
-     * They therefore simply fade into their correct historical position.
-     */
+    
+    /* ENTER FADE */
     entered
       .interrupt("enter")
       .transition(
@@ -1114,21 +942,14 @@ export function createWorldStageMap(data, ids, callbacks = {}) {
       );
 
 
-    /* ---------------------------------------------------------------------- */
-    /* Legend                                                                 */
-    /* ---------------------------------------------------------------------- */
-
+    
+    /* Legend */
     drawLegend(
-      state.metric,
-      scale
-    );
+      state.metric,scale);
   }
 
 
-  /* ------------------------------------------------------------------------ */
-  /* Linked highlighting                                                     */
-  /* ------------------------------------------------------------------------ */
-
+  /* Linked highlighting */
   function setHighlight(
     selectedNoc,
     hoveredNoc

@@ -1,10 +1,6 @@
-/**
- * CSS-first Cold War theme bridge.
- *
- * Presentation tokens live in cold_war.css. D3 reads only the values it
- * genuinely needs for dynamic encodings (for example the World Stage
- * choropleth scale). Static/categorical presentation stays class-driven CSS.
- */
+// CSS-first theme bridge
+// D3 reads only the values needed for dynamic encoding (ex. choropleth colormap)
+// categorical colors are decided by CSS
 
 function readCssToken(styles, token) {
   const value = styles.getPropertyValue(token).trim();

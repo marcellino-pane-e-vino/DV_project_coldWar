@@ -1,18 +1,4 @@
 import { createInteractiveLegend } from "./interactive-legend.js";
-
-/**
- * Shared legend-driven focus controller.
- *
- * Visualizations provide one or more target groups. Each group resolves a D3
- * selection at refresh time, so the controller remains valid after D3 joins.
- * JavaScript owns focus state/classes; CSS owns the fade transition.
- *
- * targetGroups entries:
- * - selection: () => D3 selection (required)
- * - key: datum => legend key (required unless dimWhenActive=true)
- * - dimWhenActive: dim every non-excluded target whenever a key is active
- * - exclude: datum => true for marks that must never react to legend focus
- */
 export function createLegendFocus({
   legendId,
   items,

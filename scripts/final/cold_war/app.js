@@ -1,5 +1,3 @@
-console.info("[Cold War build] v3.34.0-final-local-ripple");
-
 import { createChartHelp } from "./components/chart-help.js";
 import { createExclusiveModeToggle } from "./components/exclusive-mode-toggle.js";
 import { COLD_WAR_EDITIONS, CW_DEFAULTS } from "./core/config.js";

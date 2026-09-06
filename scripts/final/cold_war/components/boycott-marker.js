@@ -1,15 +1,3 @@
-/**
- * Shared SVG boycott marker used by Cold War visualizations.
- *
- * The component owns the semantic SVG structure (group + empty outlined
- * rectangle + label) and the D3 enter/update/exit join. Individual charts
- * remain responsible for geometry: they provide x/y/width/height and label
- * placement appropriate to their own coordinate system.
- *
- * Presentation is centralized in cold_war.css through
- * `.cw-boycott-marker-rect` and `.cw-boycott-marker-label`.
- */
-
 function resolve(value, datum, index, nodes) {
   return typeof value === "function" ? value(datum, index, nodes) : value;
 }
@@ -55,10 +43,6 @@ export function renderBoycottMarkers(
         group
           .append("rect")
           .attr("class", "cw-boycott-marker-rect")
-          // Structural invariant of this component: boycott markers are always
-          // empty outlines. Apply the shared CSS variables inline as a defensive
-          // fallback so a stale stylesheet can never produce SVG's default
-          // black-filled rectangle.
           .style("fill", "none")
           .style("stroke", "var(--cw-color-boycott)")
           .style(

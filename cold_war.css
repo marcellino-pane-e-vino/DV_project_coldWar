@@ -625,6 +625,9 @@
   fill: var(--cw-color-no-medal);
   stroke: var(--cw-color-map-status-border);
 }
+.cw-map-status-swatch.is-non-participant {
+  fill: var(--cw-color-non-participant);
+}
 .cw-map-status-swatch.is-boycott {
   stroke: var(--cw-color-boycott);
   stroke-width: var(--cw-map-status-stroke-width);
@@ -859,7 +862,7 @@
   .cw-medal-panel-wrap { height: auto !important; }
   .cw-medal-race { height: 100%; }
   .cw-pulse-legend { flex: 0 0 auto; min-width: 260px; }
-  .cw-medal-composition-legend { justify-content: flex-start; gap: 10px; row-gap: 5px; }
+  .cw-medal-composition-legend { justify-content: center; gap: 10px; row-gap: 5px; }
   .cw-medal-legend-item { padding: 2px 4px; }
   .cw-medal-legend-text { font-size: var(--type-chart-small); }
 }

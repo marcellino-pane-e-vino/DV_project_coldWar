@@ -4,7 +4,6 @@ const d3 = globalThis.d3;
 const numberOrNull = value => value === "" || value == null || Number.isNaN(Number(value)) ? null : Number(value);
 const boolValue = value => String(value).toLowerCase() === "true";
 
-// Empty GwCodes means "no sovereign CShapes geometry" and must stay empty.
 // Number("") is 0 in JavaScript, so filtering only after Number() would
 // incorrectly turn excluded delegations into the fake GW code 0.
 const parseGwCodes = value => {

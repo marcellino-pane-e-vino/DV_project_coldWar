@@ -1,13 +1,5 @@
 const d3 = globalThis.d3;
 
-/**
- * IronNeverden-style chart help.
- *
- * The trigger lives below the visualization. Hovering it reveals an overlay
- * confined to the visualization wrapper; leaving the trigger hides it.
- * The project-specific visual difference from IronNeverden is defined in CSS:
- * the divider under the title is green instead of red.
- */
 export function createChartHelp({ wrapperId, hostId, title = "How to read the chart?", steps = [] }) {
   if (!d3) {
     console.error("createChartHelp: D3.js is required.");
@@ -22,11 +14,9 @@ export function createChartHelp({ wrapperId, hostId, title = "How to read the ch
     return null;
   }
 
-  // Same idempotent cleanup pattern used by IronNeverden.
   overlayContainer.selectAll(".chart-help-overlay").remove();
   triggerContainer.selectAll(".chart-help-trigger").remove();
 
-  // The absolute overlay must be positioned relative to the chart wrapper.
   if (overlayContainer.style("position") === "static") {
     overlayContainer.style("position", "relative");
   }

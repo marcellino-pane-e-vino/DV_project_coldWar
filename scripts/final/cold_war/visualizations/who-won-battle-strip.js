@@ -1,15 +1,9 @@
-import { COLD_WAR_EDITIONS, CW_DEFAULTS } from "../core/config.js";
-import { createLegendFocus } from "../components/legend-focus.js";
 import { renderBoycottMarkers } from "../components/boycott-marker.js";
+import { createLegendFocus } from "../components/legend-focus.js";
+import { COLD_WAR_EDITIONS, CW_DEFAULTS } from "../core/config.js";
 import { applyCityYearTicks } from "../utils/olympic-axis.js";
 
 const d3 = globalThis.d3;
-
-/**
- * Battle Strip — Local Ripple.
- * The module owns the complete chart implementation and uses only the shared
- * project components for legends, boycott markers and Olympic axis labels.
- */
 export function createWhoWonBattleStrip(data, ids) {
   const state = {
     metric: "total",
@@ -65,7 +59,6 @@ export function createWhoWonBattleStrip(data, ids) {
   cityByYear.set(1980, "Moscow");
   cityByYear.set(1984, "Los Angeles");
 
-  // One quantitative scale is shared by both menu modes so equal medal
   // margins always produce equal circle areas.
   const sharedMaxMargin = d3.max(
     rows.flatMap(row => {
@@ -84,7 +77,6 @@ export function createWhoWonBattleStrip(data, ids) {
     .attr("y1", markerY)
     .attr("y2", markerY);
 
-  const summaryLayer = svg.append("g").attr("class", "cw-battle-summary");
   const pointLayer = svg.append("g").attr("class", "cw-battle-point-layer");
   const boycottLayer = svg.append("g").attr("class", "cw-battle-boycott-layer");
   const focusLayer = svg.append("g").attr("class", "cw-battle-focus-layer").attr("pointer-events", "none");
@@ -107,8 +99,6 @@ export function createWhoWonBattleStrip(data, ids) {
 
   let currentRows = [];
 
-  let previousLegendKey = null;
-  let legendAnimationId = 0;
   const focusController = createLegendFocus({
     legendId: ids.legendId,
     items: [
@@ -167,17 +157,6 @@ export function createWhoWonBattleStrip(data, ids) {
     return state.pinnedYear ?? state.hoveredYear;
   }
 
-  function distribute(years, start, end) {
-    const positions = new Map();
-    if (!years.length) return positions;
-    if (years.length === 1) {
-      positions.set(years[0], (start + end) / 2);
-      return positions;
-    }
-    const scale = d3.scalePoint().domain(years.map(String)).range([start, end]).padding(0.12);
-    years.forEach(year => positions.set(year, scale(String(year))));
-    return positions;
-  }
 
   function rippleLayout(year) {
     const selectedYear = activeYear();
@@ -280,8 +259,6 @@ export function createWhoWonBattleStrip(data, ids) {
     const values = state.metric === "gold" ? [5, 10, 15] : [10, 20, 30];
     const unit = state.metric === "gold" ? "Gold medal difference" : "Medal difference";
     const items = sizeLegendLayer.selectAll("g.cw-battle-size-item")
-      // Keep the three visual positions stable across metrics so their circles
-      // can interpolate from one reference value to the next.
       .data(values)
       .join(enter => {
         const group = enter.append("g").attr("class", "cw-battle-size-item");
@@ -393,9 +370,7 @@ export function createWhoWonBattleStrip(data, ids) {
       .classed("is-ussr", d => d.winnerNoc === "URS")
       .classed("is-draw", d => d.winnerNoc === "DRAW");
 
-    // Set the final position before the fade begins. Previously the group was
-    // created at SVG origin and transitioned to the selected point, producing
-    // the misleading impression that its contents arrived from above.
+    // Set the final position before the fade begins
     focus
       .attr("transform", d => `translate(${rippleLayout(d.Year)},${markerY})`)
       .transition()

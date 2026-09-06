@@ -38,7 +38,7 @@ const VISIBLE_CALLOUT_IDS = new Set([
   // "soviet-union-collapses"
 ]);
 
-/* Positions are intentionally hand-authored for editorial layout. */
+/* Callout position are hand-picked */
 const CALLOUTS = Object.freeze([
   {
     id: "soviet-atomic-test",
@@ -552,10 +552,7 @@ export function createArmsRace(data, ids) {
   interactionRect.raise();
   hoverLayer.raise();
 
-  /*
-   * These compact rectangles sit over callout labels only.
-   * They are independent from the full-height vertical rules.
-   */
+
   calloutInteractionLayer = svg
     .append("g")
     .attr("class", "cw-arms-callout-interaction-layer");
