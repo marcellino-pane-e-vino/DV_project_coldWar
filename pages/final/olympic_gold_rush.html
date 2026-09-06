@@ -205,7 +205,7 @@
             <p>All browser-ready datasets are generated from committed source material in the repository.</p>
             <ul>
               <li>Olympic results were drawn from the public <a href="https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results" target="_blank" rel="noopener noreferrer">120 Years of Olympic History</a> dataset and limited to Summer Games held between 1952 and 1988. The dataset provides athlete-level records, including year, city, sport, event, NOC and medal.</li>
-              <li>To move beyond medal tables and examine direct USA-USSR contests, the project derives a purpose-built dataset by scraping and processing publicly available <a href="https://www.olympedia.org/" target="_blank" rel="noopener noreferrer">Olympedia</a> result pages.</li>
+              <li>To move beyond medal tables and examine direct USA-USSR contests, the project derives a purpose-built dataset by retrieving and processing publicly available <a href="https://www.olympedia.org/" target="_blank" rel="noopener noreferrer">Olympedia</a> result pages.</li>
               <li>The historical-context chart uses nuclear-warhead estimates from <a href="https://ourworldindata.org/grapher/nuclear-warhead-stockpiles-lines" target="_blank" rel="noopener noreferrer">Our World in Data</a>.</li>
               <li>The map uses a custom-made historical-geography dataset generated from <a href="https://icr.ethz.ch/data/cshapes/" target="_blank" rel="noopener noreferrer">CShapes 2.0</a>. The preprocessing pipeline links Olympic delegations to the appropriate state boundaries for each Olympic edition.</li>
             </ul>
@@ -222,7 +222,7 @@
           To represent all "Direct USA-USSR Olympic Encounters" a separate, three-stage pipeline needed to be built:
           <ul>
           <li> First, each USA-USSR match from the common olympic dataset was joined with the public <a href="https://github.com/josephwccheng/olympedia_web_scraping/blob/main/data/Olympic_Athlete_Event_Results.csv" target="_blank" rel="noopener noreferrer">Olympedia scraping project </a>  developed by Joseph Chang, which provides with athlete-level records which can be then matched with public Olympedia pages through the "result_id" value. Each record of the resulting dataset was a candidate page.
-          <li> A custom web scraper (powered by python library BeautifulSoup) then retrieves and download in cache each candidate page.</li>
+          <li> A python script then retrieves and downloads in cache each candidate page.</li>
           <li> After that, each cached page is normalised into a dedicated dataset containing the edition, sport, event, winner and (when available) the score.</li>
           </ul>
           </p>
@@ -231,7 +231,7 @@
             <p>The project covers Summer Olympics only. The visualization are designed to show patterns in the Olympic performances, but fail to establish their causes. Explanation involving training systems, population, resources and political pressures are not supported by data. </p>
             <p>The choice of giving Gold, Silver and Bronze medals the same weight defines success as finishing in the podium rather than arriving first, thus biasing the analysis towards quantity of medals, rather than quality.</p>
             <p>The definition of "direct encounter" adopted by this project only considers sports with only two contestant in the field at any given time. This definition might be considered narrow and might exclude other head-to-heads in sports with more than two contestants. .</p>
-            <p> Since no exhaustive list of USA and USSR "direct encounters" was available at the time of the development of this project, the completeness of the list of direct encounters derived by the web scraping sub-pipeline cannot be guaranteed.</p>
+            <p> Since no exhaustive list of USA and USSR "direct encounters" was available at the time of the development of this project, the completeness of the list of direct encounters derived by the webpage retrival and caching sub-pipeline cannot be guaranteed.</p>
         </div>
       </section>
 
