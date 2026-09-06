@@ -6,6 +6,8 @@
 
 This project examines the the Olympic dimension of the Cold War through Summer Olympic results from 1952 to 1988. After a brief contextual analysis of nuclear stockpile estimates, it analyzes and highlightes patterns among Olympic medal records and verified direct USA-USSR encounters and tries to answer to the burning question of "Who won the olympic Cold War?".
 
+**Link:** https://marcellino-pane-e-vino.github.io/DV_project_coldWar/
+
 ## Repository structure
 
 ```text

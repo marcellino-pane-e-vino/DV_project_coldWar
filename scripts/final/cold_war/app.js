@@ -41,7 +41,7 @@ function initializeHelp() {
     steps: [
       "Highlight an event by hovering or clicking on it.",
       "Click on legend items to isolate its relative superpower.",
-      "Hover on the areas to see details. "
+      "Hover on the graph to see details. "
     ]
   });
 
