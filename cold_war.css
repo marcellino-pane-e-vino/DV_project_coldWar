@@ -84,9 +84,9 @@
   --cw-boycott-marker-dash: 5 4;
   --cw-boycott-marker-label-size: 12px;
 
-  --cw-arms-opacity-default: 0.28;
-  --cw-arms-opacity-focus: 0.68;
-  --cw-arms-opacity-dim: 0.10;
+  --cw-arms-opacity-default: 0;
+  --cw-arms-opacity-focus: 0;
+  --cw-arms-opacity-dim: 0;
   --cw-arms-line-opacity-dim: 0.28;
   --cw-arms-line-width: 2.1;
   --cw-arms-line-width-pinned: 3;
