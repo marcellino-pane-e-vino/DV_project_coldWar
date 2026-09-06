@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "expected_output": {
+    "filename": "olympic_geography_mapping.csv",
+    "sha256": "0b5b9bf9e63d7dca9ccc16be65aa42a3e2ff94e13a2b3f2d027087f03c46ebc9"
+  },
+  "sources": {
+    "olympic_history": {
+      "filename": "../olympics/120_years_olympic_history_OG.csv",
+      "url": "https://www.kaggle.com/datasets/heesoo37/120-years-of-olympic-history-athletes-and-results",
+      "sha256": "2bf0b660e09fc65fb5c6dd4c790d57c410dfea91a1a2b5863875e30338c49eeb",
+      "role": "Provides the Summer Olympic NOC-by-edition participation universe and source delegation labels."
+    },
+    "cshapes": {
+      "filename": "cshapes_2.0.tar.gz",
+      "url": "https://cran.r-project.org/src/contrib/cshapes_2.0.tar.gz",
+      "sha256": "7a269742351b37e6ea6da97fadaa1374e3c2f804a784492afd48dc0d79417830",
+      "version": "2.0",
+      "role": "Single CShapes 2.0 package archive used by both the Python crosswalk builder and the R basemap generator."
+    },
+    "countrycode": {
+      "filename": "countrycode_codelist.csv",
+      "url": "https://raw.githubusercontent.com/vincentarelbundock/countrycode/27718173677329c91f724397c9d0a222b84d7f01/python/countrycode/data/codelist.csv.gz",
+      "compression": "gzip",
+      "sha256": "b23bf522659b48edb1e5ab3aef701c375d19920a2de44ca4ed548474cabbf3a0",
+      "commit": "27718173677329c91f724397c9d0a222b84d7f01",
+      "role": "Provides the versioned country-name and IOC-to-Gleditsch-Ward concordance. The repository stores the decompressed CSV used by Python."
+    },
+    "countries": {
+      "filename": "countries-c8015eeb.json",
+      "url": "https://raw.githubusercontent.com/mledoze/countries/c8015eebdd94c533358406b0d709f441389e1f2e/countries.json",
+      "sha256": "99b85dda36895c79caf72e191d035e4b9d82e811ee34f9ca15dfa67d7c561ba8",
+      "commit": "c8015eebdd94c533358406b0d709f441389e1f2e",
+      "role": "Distinguishes present-day independent countries from non-sovereign IOC territories when no GW code exists."
+    }
+  }
+}

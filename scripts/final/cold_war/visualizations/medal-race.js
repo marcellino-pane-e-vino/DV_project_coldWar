@@ -1,10 +1,10 @@
-import { CW_DEFAULTS } from "../core/config.js";
 import {
   getColdWarTooltip,
   hideTooltip,
   moveTooltip,
   showTooltip
 } from "../components/tooltip.js";
+import { CW_DEFAULTS } from "../core/config.js";
 
 const d3 = globalThis.d3;
 
@@ -205,7 +205,7 @@ export function createMedalRace(data, ids, callbacks = {}, options = {}) {
 
     strip.innerHTML =
       `<span class="cw-boycott-symbol" aria-hidden="true"></span>` +
-      `<strong>${boycott.Country}</strong> did not participate — boycott`;
+      `The <strong>${boycott.Country}</strong> did not participate due to a boycott.`;
 
     strip.classList.toggle(
       "active",

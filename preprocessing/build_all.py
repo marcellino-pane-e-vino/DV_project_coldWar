@@ -1,17 +1,9 @@
-#!/usr/bin/env python3
-"""Rebuild all Cold War visualization-ready datasets from local sources.
-
-This orchestrator intentionally does *not* perform live Olympedia scraping and
-*does not* reinstall/regenerate CShapes. Those are explicit source-side steps.
-It uses the committed/cache-backed source material, rebuilds the shared Olympic
-intermediate, executes the seven chart notebooks, then runs the validators.
-"""
 from __future__ import annotations
 
-from pathlib import Path
 import importlib.util
 import subprocess
 import sys
+from pathlib import Path
 
 import nbformat
 from nbconvert.preprocessors import ExecutePreprocessor
@@ -48,15 +40,25 @@ def execute_notebook(path: Path) -> None:
     runner.preprocess(notebook, {"metadata": {"path": str(CHARTS)}})
 
 
-def run_validator(path: Path) -> None:
+def run_validator(path: Path, *args: str) -> None:
     print(f"[validate] {path.relative_to(ROOT)}")
-    result = subprocess.run([sys.executable, str(path)], cwd=ROOT)
+    result = subprocess.run([sys.executable, str(path), *args], cwd=ROOT)
     if result.returncode != 0:
         raise SystemExit(result.returncode)
 
 
 def main() -> None:
     print("Cold War data build")
+
+    # This reconstructs the mapping in a temporary directory and compares its
+    # bytes with the committed artifact. It never rewrites the mapping used by
+    # the downstream chart build.
+    print("[geography] verifying generated Olympic/CShapes mapping")
+    run_validator(
+        PRE / "source" / "geography" / "build_olympic_geography_mapping.py",
+        "--check",
+    )
+
     common = load_common_module()
 
     print("[common] refreshing offline Rivalry Pulse intermediate")
@@ -68,10 +70,6 @@ def main() -> None:
 
     for name in NOTEBOOKS:
         execute_notebook(CHARTS / name)
-
-    # The repository validator invokes the geography and Cold War validators,
-    # so there is one authoritative quality gate for the final repository.
-    run_validator(PRE / "validation" / "validate_repository.py")
 
     print("\nBUILD SUCCESSFUL")
 

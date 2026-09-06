@@ -4,15 +4,10 @@
 # a lightweight state-name/Gleditsch-Ward reference for auditing the Olympic
 # geography crosswalk.
 #
-# Canonical source: CShapes 2.0 via the official `cshapes` R package.
-# Snapshot convention: January 1 of each Olympic year.
-
-suppressPackageStartupMessages({
-  library(cshapes)
-  library(sf)
-})
-
-message("Using cshapes R package version ", as.character(packageVersion("cshapes")))
+# Canonical source: the pinned local CShapes 2.0 CRAN package archive. The
+# Python crosswalk builder reads this same archive directly.
+# Snapshot convention: July 1 of each Summer Olympic year. This agrees with the
+# Python crosswalk builder and avoids a pre-transition 1964 snapshot.
 
 OLYMPIC_YEARS <- c(
   1896, 1900, 1904, 1906, 1908, 1912, 1920, 1924, 1928, 1932,
@@ -25,6 +20,33 @@ file_arg <- grep("^--file=", args, value = TRUE)
 script_path <- if (length(file_arg)) normalizePath(sub("^--file=", "", file_arg[[1]])) else normalizePath(".")
 script_dir <- if (file.info(script_path)$isdir) script_path else dirname(script_path)
 repo_root <- normalizePath(file.path(script_dir, "..", "..", ".."), mustWork = TRUE)
+archive_path <- file.path(script_dir, "external_sources", "cshapes_2.0.tar.gz")
+
+if (!file.exists(archive_path)) {
+  stop("Missing pinned CShapes archive: ", archive_path)
+}
+
+required_packages <- c("sf", "rmapshaper", "sp")
+missing_packages <- required_packages[!vapply(required_packages, requireNamespace, logical(1), quietly = TRUE)]
+if (length(missing_packages)) {
+  stop(
+    "Install required R packages before running this script: ",
+    paste(missing_packages, collapse = ", ")
+  )
+}
+
+if (!requireNamespace("cshapes", quietly = TRUE) || packageVersion("cshapes") != "2.0") {
+  message("Installing CShapes 2.0 from the pinned local archive")
+  install.packages(archive_path, repos = NULL, type = "source")
+}
+
+suppressPackageStartupMessages({
+  library(cshapes)
+  library(sf)
+})
+
+message("Using cshapes R package version ", as.character(packageVersion("cshapes")))
+
 out_dir <- file.path(repo_root, "data", "final", "geography", "basemaps")
 intermediate_dir <- file.path(repo_root, "preprocessing", "intermediate")
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
@@ -44,9 +66,9 @@ for (year in OLYMPIC_YEARS) {
   message("Generating CShapes snapshot for ", year, "...")
 
   snapshot <- cshp(
-    date = as.Date(sprintf("%d-01-01", year)),
+    date = as.Date(sprintf("%d-07-01", year)),
     useGW = TRUE,
-    dependencies = FALSE
+    dependencies = TRUE
   )
   snapshot <- st_as_sf(snapshot)
 
