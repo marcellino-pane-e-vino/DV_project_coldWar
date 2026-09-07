@@ -4,6 +4,7 @@ Year,Sport,Scope,USATotal,USSRTotal,USAGold,USSRGold,TotalDifference,GoldDiffere
 1952,Boxing,all_games,5,6,5,0,-1,5
 1952,Canoeing,all_games,1,1,1,0,0,1
 1952,Diving,all_games,9,0,4,0,9,4
+1952,Equestrianism,all_games,2,0,0,0,2,0
 1952,Gymnastics,all_games,0,21,0,9,-21,-9
 1952,Rowing,all_games,3,3,2,1,0,1
 1952,Sailing,all_games,3,0,2,0,3,2
@@ -19,6 +20,7 @@ Year,Sport,Scope,USATotal,USSRTotal,USAGold,USSRGold,TotalDifference,GoldDiffere
 1956,Fencing,all_games,0,2,0,0,-2,0
 1956,Football,all_games,0,1,0,1,-1,-1
 1956,Gymnastics,all_games,0,23,0,11,-23,-11
+1956,Modern Pentathlon,all_games,1,1,0,1,0,-1
 1956,Rowing,all_games,6,4,3,2,2,1
 1956,Sailing,all_games,2,0,1,0,2,1
 1956,Shooting,all_games,1,8,0,3,-7,-3
@@ -32,8 +34,10 @@ Year,Sport,Scope,USATotal,USSRTotal,USAGold,USSRGold,TotalDifference,GoldDiffere
 1960,Canoeing,all_games,0,4,0,3,-4,-3
 1960,Cycling,all_games,0,5,0,1,-5,-1
 1960,Diving,all_games,6,1,2,0,5,2
+1960,Equestrianism,all_games,1,1,0,1,0,-1
 1960,Fencing,all_games,1,7,0,3,-6,-3
 1960,Gymnastics,all_games,0,26,0,10,-26,-10
+1960,Modern Pentathlon,all_games,2,1,0,0,1,0
 1960,Rowing,all_games,2,5,1,2,-3,-1
 1960,Sailing,all_games,2,2,1,1,0,0
 1960,Shooting,all_games,2,7,1,2,-5,-1
@@ -47,9 +51,11 @@ Year,Sport,Scope,USATotal,USSRTotal,USAGold,USSRGold,TotalDifference,GoldDiffere
 1964,Canoeing,all_games,2,4,0,3,-2,-3
 1964,Cycling,all_games,0,1,0,0,-1,0
 1964,Diving,all_games,8,1,3,0,7,3
+1964,Equestrianism,all_games,1,2,0,0,-1,0
 1964,Fencing,all_games,0,6,0,3,-6,-3
 1964,Gymnastics,all_games,0,18,0,4,-18,-4
 1964,Judo,all_games,1,2,0,0,-1,0
+1964,Modern Pentathlon,all_games,1,3,0,1,-2,-1
 1964,Rowing,all_games,4,2,2,2,2,0
 1964,Sailing,all_games,5,0,0,0,5,0
 1964,Shooting,all_games,7,2,2,0,5,2
@@ -63,8 +69,10 @@ Year,Sport,Scope,USATotal,USSRTotal,USAGold,USSRGold,TotalDifference,GoldDiffere
 1968,Boxing,all_games,7,6,2,3,1,-1
 1968,Canoeing,all_games,0,6,0,2,-6,-2
 1968,Diving,all_games,6,2,2,0,4,2
+1968,Equestrianism,all_games,3,2,1,1,1,0
 1968,Fencing,all_games,0,7,0,3,-7,-3
 1968,Gymnastics,all_games,0,18,0,5,-18,-5
+1968,Modern Pentathlon,all_games,0,2,0,0,-2,0
 1968,Rowing,all_games,2,2,0,1,0,-1
 1968,Sailing,all_games,2,1,2,1,1,1
 1968,Shooting,all_games,3,5,1,2,-2,-1
@@ -80,10 +88,12 @@ Year,Sport,Scope,USATotal,USSRTotal,USAGold,USSRGold,TotalDifference,GoldDiffere
 1972,Canoeing,all_games,1,6,0,6,-5,-6
 1972,Cycling,all_games,0,3,0,2,-3,-2
 1972,Diving,all_games,3,1,1,1,2,0
+1972,Equestrianism,all_games,3,2,0,1,1,-1
 1972,Fencing,all_games,0,7,0,2,-7,-2
 1972,Football,all_games,0,1,0,0,-1,0
 1972,Gymnastics,all_games,0,16,0,6,-16,-6
 1972,Judo,all_games,0,4,0,1,-4,-1
+1972,Modern Pentathlon,all_games,0,3,0,1,-3,-1
 1972,Rowing,all_games,1,2,0,2,-1,-2
 1972,Sailing,all_games,3,2,1,1,1,0
 1972,Shooting,all_games,4,4,2,1,0,1
@@ -99,10 +109,13 @@ Year,Sport,Scope,USATotal,USSRTotal,USAGold,USSRGold,TotalDifference,GoldDiffere
 1976,Canoeing,all_games,0,9,0,6,-9,-6
 1976,Cycling,all_games,0,2,0,1,-2,-1
 1976,Diving,all_games,5,3,2,1,2,1
+1976,Equestrianism,all_games,4,0,2,0,4,2
 1976,Fencing,all_games,0,7,0,3,-7,-3
 1976,Football,all_games,0,1,0,0,-1,0
 1976,Gymnastics,all_games,1,17,0,7,-16,-7
+1976,Handball,all_games,0,2,0,2,-2,-2
 1976,Judo,all_games,1,5,0,2,-4,-2
+1976,Modern Pentathlon,all_games,0,1,0,0,-1,0
 1976,Rowing,all_games,3,9,0,1,-6,-1
 1976,Sailing,all_games,3,2,0,0,1,0
 1976,Shooting,all_games,3,3,2,1,0,1
@@ -117,14 +130,19 @@ Year,Sport,Scope,USATotal,USSRTotal,USAGold,USSRGold,TotalDifference,GoldDiffere
 1988,Canoeing,all_games,2,6,2,3,-4,-1
 1988,Cycling,all_games,1,7,0,4,-6,-4
 1988,Diving,all_games,5,0,2,0,5,2
+1988,Equestrianism,all_games,2,0,0,0,2,0
 1988,Fencing,all_games,0,5,0,1,-5,-1
 1988,Football,all_games,0,1,0,1,-1,-1
 1988,Gymnastics,all_games,1,18,0,10,-17,-10
+1988,Handball,all_games,0,2,0,1,-2,-1
 1988,Judo,all_games,2,5,0,0,-3,0
+1988,Modern Pentathlon,all_games,0,1,0,0,-1,0
+1988,Rhythmic Gymnastics,all_games,0,2,0,1,-2,-1
 1988,Rowing,all_games,3,3,0,0,0,0
 1988,Sailing,all_games,5,2,1,0,3,1
 1988,Shooting,all_games,1,11,0,4,-10,-4
 1988,Swimming,all_games,18,9,8,2,9,6
+1988,Synchronized Swimming,all_games,2,0,0,0,2,0
 1988,Tennis,all_games,5,0,2,0,5,2
 1988,Volleyball,all_games,1,2,1,1,-1,0
 1988,Water Polo,all_games,1,1,0,0,0,0
@@ -137,14 +155,19 @@ ALL,Boxing,all_games,42,43,22,13,-1,9
 ALL,Canoeing,all_games,6,43,3,25,-37,-22
 ALL,Cycling,all_games,1,18,0,8,-17,-8
 ALL,Diving,all_games,51,8,19,2,43,17
+ALL,Equestrianism,all_games,16,7,3,3,9,0
 ALL,Fencing,all_games,1,41,0,15,-40,-15
 ALL,Football,all_games,0,4,0,2,-4,-2
 ALL,Gymnastics,all_games,2,157,0,62,-155,-62
+ALL,Handball,all_games,0,4,0,3,-4,-3
 ALL,Judo,all_games,4,16,0,3,-12,-3
+ALL,Modern Pentathlon,all_games,4,12,0,3,-8,-3
+ALL,Rhythmic Gymnastics,all_games,0,2,0,1,-2,-1
 ALL,Rowing,all_games,24,30,8,11,-6,-3
 ALL,Sailing,all_games,25,9,8,3,16,5
 ALL,Shooting,all_games,23,44,9,14,-21,-5
 ALL,Swimming,all_games,211,37,87,4,174,83
+ALL,Synchronized Swimming,all_games,2,0,0,0,2,0
 ALL,Tennis,all_games,5,0,2,0,5,2
 ALL,Volleyball,all_games,1,10,1,5,-9,-4
 ALL,Water Polo,all_games,2,6,0,1,-4,-1
@@ -187,6 +210,7 @@ ALL,Wrestling,all_games,30,99,10,50,-69,-40
 1988,Boxing,head_to_head,8,4,3,1,4,2
 1988,Fencing,head_to_head,0,5,0,1,-5,-1
 1988,Football,head_to_head,0,1,0,1,-1,-1
+1988,Handball,head_to_head,0,2,0,1,-2,-1
 1988,Judo,head_to_head,2,5,0,0,-3,0
 1988,Tennis,head_to_head,5,0,2,0,5,2
 1988,Volleyball,head_to_head,1,2,1,1,-1,0
@@ -196,6 +220,7 @@ ALL,Basketball,head_to_head,9,9,6,3,0,3
 ALL,Boxing,head_to_head,42,43,22,13,-1,9
 ALL,Fencing,head_to_head,1,41,0,15,-40,-15
 ALL,Football,head_to_head,0,1,0,1,-1,-1
+ALL,Handball,head_to_head,0,2,0,1,-2,-1
 ALL,Judo,head_to_head,3,11,0,1,-8,-1
 ALL,Tennis,head_to_head,5,0,2,0,5,2
 ALL,Volleyball,head_to_head,1,6,1,4,-5,-3

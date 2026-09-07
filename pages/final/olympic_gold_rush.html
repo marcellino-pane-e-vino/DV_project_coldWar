@@ -121,7 +121,7 @@
             <div class="text-container mt-4">
               <p>As the map suggests, the USA and USSR dominated the Olympics: in the editions in which both competed, they repeatedly ranked among the top three countries in the medal table. Their success was not not based on one exceptional sport or edition, but on sustained success across the Cold War period. Such consistency suggests that both countries developed systems able to identify and reproduce Olympic talent over time.</p>
               <p>They were not the only countries to do so. Smaller nations, such as Hungary, Japan, Italy and later East Germany also developed effective pipelines of talent recognition and promotion, albeit often limited to specific disciplilnes. What made the two superpowers different was both scale and depth of their systems. Not only they had one of the largest population pool they could identify talents, but they also had the resources to support those athletes over many years and to fund serious programmes across a wide range of disciplines.</p>
-              <p>The two countries reached this depth through different systems. American success emerged from a decentralised network of schools, universities, clubs, and professional sport. Soviet success was built around a centralized system of selection, specialist training, coaching, and sports science. In both cases, Olympic success was treated as a symbolic measure of the prestige and strength of the nation.</p>
+              <p>The two countries reached this depth through different systems. American success emerged from a decentralised network of schools, universities, clubs, and sport-specific governing bodies.<sup><a href="#historical-source-1" aria-label="See historical source 1">[1]</a></sup> Soviet success was built around a more state-directed system of selection, specialist training, coaching, and sports science.<sup><a href="#historical-source-2" aria-label="See historical source 2">[2]</a></sup> In both cases, Olympic success was treated as a symbolic measure of the prestige and strength of the nation.<sup><a href="#historical-source-2" aria-label="See historical source 2">[2]</a></sup></p>
               <p>The results of the boyotted editions further revealed how skewed the competition was withouth the rival: without the USA in Moscow 1980, the USSR reached 80 gold medals and 195 medals overall, while four years later, with the USSR absent from Los Angeles, the USA reached 82 golds and 173 medals.</p>
               <p>Overall medal totals establish the scale of superpower dominance, but they do not explain its composition. The next visualization compares the two delegations sport by sport, showing where each built its advantage.</p>
             </div>
@@ -141,9 +141,9 @@
             </div>
             <div id="cw-sf-help" class="chart-help-host"></div>
             <div class="text-container mt-4">
-              <p>Across the editions in which both superpowers competed, the Soviet Union built its largest advantages in gymnastic, wrestling and fencing, while the United States's clearest strenghts lie in swimming, athletics and diving. Between those poles lie contended fronts, most clearly basketball and boxing.</p>
-              <p>The American pattern reflects the sports in which its decentralised system was strongest. Clubs, schools and universities created a broad competitive base, particularly for swimming, diving and athletics. This did not make the United States uniquely capable of producing elite athletes, as many countries had successful pathways, but it gave American athletes a large pool of peers, coaches and competitions in these sports over many years.</p>
-              <p>The Soviets prepared their athletes through a different route. Young athletes could be selected early and and supported by coaches and sports scientists funded directly by the government. This state-subsidesed programs aimed to channel talent towards medal-rich and technically demanding sports. The graph shows three major Soviet successes: gymnastic, wrestling and fencing: all three benefit greately from early specialization and prolonged coaching from specialized experts.</p>
+              <p>Across the editions displayed, the Soviet Union built its largest advantages in gymnastic, wrestling and fencing, while the United States's clearest strenghts lie in swimming, athletics and diving. Between those poles lie contended fronts, most clearly basketball and boxing.</p>
+              <p>The American pattern is consistent with the sports in which its decentralised system was strongest. Clubs, schools and universities formed a broad competitive base, including in swimming, diving and athletics.<sup><a href="#historical-source-1" aria-label="See historical source 1">[1]</a></sup> This did not make the United States uniquely capable of producing elite athletes, as many countries had successful pathways, but it gave American athletes access to peers, coaches and competitions in these sports over many years.</p>
+              <p>The Soviets prepared their athletes through a different route. Young athletes could be selected early and supported by specialist coaches and sports scientists working within state-directed institutions.<sup><a href="#historical-source-2" aria-label="See historical source 2">[2]</a></sup> These state-supported programmes aimed to identify and prepare talent for international competition. The graph shows three major Soviet successes—gymnastics, wrestling and fencing—but it cannot establish that this training system caused those advantages.</p>
               <p>Basketball remained a shared front because both countries had strong, but different, routes into the sport. Olympic amateur rules prevented the United States from sending NBA professionals, while Soviet players could train and play together for formally amateur state clubs over longer periods. </p>
               <p>While this visualization cannot show whether this balance led to direct rivalry on the court, the next visualization makes those face-to-face encounters visible.</p>
             </div>
@@ -198,9 +198,16 @@
         </div>
       </section>
 
+
       <section id="methodology" class="methodology-section border-top pt-5 mt-5">
         <div class="text-container">
           <h2 class="fw-bold mb-4">Methodology</h2>
+          <h3 class="h5 mt-4">Historical Sources</h3>
+          <ul>
+            <li id="historical-source-1" class="mb-2">Wilhelm, Ben. <cite>The United States Olympic and Paralympic Committee: A Primer</cite>. Congressional Research Service, R47850, 2023. <a href="https://crsreports.congress.gov/product/pdf/R/R47850" target="_blank" rel="noopener noreferrer">Official report</a>.</li>
+            <li id="historical-source-2">Dufraisse, Sylvain. “Facing the Involvement of Youths in Competitions: Soviet Visions and Adaptations to the Rejuvenation of Elite Sports (Second Half of the 20th Century).” <cite>Frontiers in Sports and Active Living</cite>, vol. 2, 2020, article 568025. <a href="https://doi.org/10.3389/fspor.2020.568025" target="_blank" rel="noopener noreferrer">DOI</a>.</li>
+          </ul>
+
           <h3 class="h5 mt-4">Data Sources</h3>
             <p>All browser-ready datasets are generated from committed source material in the repository.</p>
             <ul>
@@ -209,7 +216,6 @@
               <li>The historical-context chart uses nuclear-warhead estimates from <a href="https://ourworldindata.org/grapher/nuclear-warhead-stockpiles-lines" target="_blank" rel="noopener noreferrer">Our World in Data</a>.</li>
               <li>The map uses a custom-made historical-geography dataset generated from <a href="https://icr.ethz.ch/data/cshapes/" target="_blank" rel="noopener noreferrer">CShapes 2.0</a>. The preprocessing pipeline links Olympic delegations to the appropriate state boundaries for each Olympic edition.</li>
             </ul>
-
           <h3 class="h5 mt-4">Data Cleaning</h3>
             <p>Records were filtered by season and edition, then team medals were deduplicated at delegation-event level to prevent athlete-level duplication from inflating national totals. Medal counts were aggregated into gold, silver, bronze and total medals, then normalised as shares of medals awarded in each edition. </p>
             <p>Boycotts are treated with special care: USA in 1980 and USSR in 1984 are explicitly marked as boycotts, and their medals are treated as unavailable rather than arbitrarlily set as zero.</p>
